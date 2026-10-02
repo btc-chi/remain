@@ -1,0 +1,289 @@
+<title>Rootwork Today</title>
+<style>
+/* Layout: one iPhone screen, centred on desktop, full-bleed on a phone.
+   Native iOS look: system fonts (SF Pro for UI, New York for Scripture), grouped background,
+   solid content cards, glass only on the floating tab bar. Color comes from the art and the three rings. */
+:root{
+  --bg:#F2F2F7;           /* systemGroupedBackground */
+  --card:#FFFFFF;         /* secondarySystemGroupedBackground */
+  --label:#000000;
+  --label-2:rgba(60,60,67,.60);
+  --label-3:rgba(60,60,67,.30);
+  --sep:rgba(60,60,67,.18);
+  --fill:rgba(120,120,128,.12);
+  --father:#E2A72E;       /* gold: the halo */
+  --son:#D7263D;          /* crimson: his robe, the red letters */
+  --spirit:#3FA7E0;       /* sky: the dove */
+  --glass:rgba(255,255,255,.62);
+  --glass-edge:rgba(255,255,255,.9);
+  --glass-shadow:0 10px 30px rgba(0,0,0,.12),0 1px 0 rgba(0,0,0,.04);
+  --desk:#E4E4EA;
+  --f-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue","Segoe UI",system-ui,sans-serif;
+  --f-word:ui-serif,"New York","Iowan Old Style",Georgia,serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#000000; --card:#1C1C1E; --label:#FFFFFF; --label-2:rgba(235,235,245,.60); --label-3:rgba(235,235,245,.30);
+  --sep:rgba(84,84,88,.6); --fill:rgba(120,120,128,.24);
+  --father:#F0B840; --son:#FF4058; --spirit:#5AC8FA;
+  --glass:rgba(40,40,44,.55); --glass-edge:rgba(255,255,255,.14); --glass-shadow:0 10px 30px rgba(0,0,0,.5);
+  --desk:#111113; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#000000; --card:#1C1C1E; --label:#FFFFFF; --label-2:rgba(235,235,245,.60); --label-3:rgba(235,235,245,.30);
+  --sep:rgba(84,84,88,.6); --fill:rgba(120,120,128,.24);
+  --father:#F0B840; --son:#FF4058; --spirit:#5AC8FA;
+  --glass:rgba(40,40,44,.55); --glass-edge:rgba(255,255,255,.14); --glass-shadow:0 10px 30px rgba(0,0,0,.5);
+  --desk:#111113; color-scheme:dark}
+
+html,body{height:100%}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{background:var(--desk);color:var(--label);font-family:var(--f-ui);-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button:focus-visible{outline:2px solid var(--spirit);outline-offset:2px}
+svg{flex:none}
+
+.stage{min-height:100%;display:flex;align-items:center;justify-content:center;padding-block:28px;padding-inline:16px}
+.device{width:393px;height:852px;border-radius:56px;padding:11px;background:#0b0b0c;box-shadow:0 0 0 2px #2b2b2e,0 40px 80px rgba(0,0,0,.25);flex:none}
+.screen{position:relative;width:100%;height:100%;border-radius:46px;overflow:hidden;background:var(--bg)}
+.island{position:absolute;left:50%;top:11px;transform:translateX(-50%);width:124px;height:36px;border-radius:20px;background:#000;z-index:30}
+.status{position:absolute;top:0;left:0;right:0;height:52px;display:flex;justify-content:space-between;align-items:center;padding:4px 32px 0 44px;font-weight:600;font-size:16px;z-index:29;pointer-events:none}
+.scroll{position:absolute;inset:0;overflow-y:auto;padding:58px 16px 120px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+@media (max-width:500px){
+  .stage{padding:0;display:block;height:100%}
+  .device{width:100%;height:100%;border-radius:0;padding:0;background:none;box-shadow:none}
+  .screen{border-radius:0}
+  .island,.status{display:none}
+  .scroll{padding-top:calc(env(safe-area-inset-top,0px) + 8px)}
+}
+
+/* ---------- header ---------- */
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 4px 14px}
+.date{font-size:13px;font-weight:600;color:var(--label-2);text-transform:uppercase;letter-spacing:.02em}
+.title{font-size:30px;font-weight:700;letter-spacing:-.025em;margin:2px 0 0;line-height:1.1}
+.head-r{display:flex;align-items:center;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:5px;height:36px;padding:0 12px;border-radius:999px;background:var(--glass);border:.5px solid var(--glass-edge);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(20px) saturate(1.8);backdrop-filter:blur(20px) saturate(1.8);font-weight:600;font-size:15px;font-variant-numeric:tabular-nums}
+.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:15px;color:#fff;background:linear-gradient(160deg,#8E8E93,#5A5A5F)}
+
+/* ---------- verse of the day ---------- */
+.votd{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/4.6;max-width:100%;color:#fff;isolation:isolate}
+.votd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.votd::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.05) 55%,rgba(0,0,0,.6) 100%)}
+.votd .top{position:absolute;top:18px;left:20px;right:20px}
+.votd .lab{font-size:13px;font-weight:600;opacity:.9}
+.votd .ref{font-size:20px;font-weight:700;margin-top:2px}
+.votd .v{position:absolute;left:20px;right:20px;bottom:86px;font-family:var(--f-word);font-size:30px;line-height:1.18;letter-spacing:-.01em;text-wrap:balance;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.votd .acts{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:8px}
+.gbtn{flex:1;height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:600;font-size:15px;color:#fff;
+  background:rgba(255,255,255,.16);border:.5px solid rgba(255,255,255,.35);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.gbtn.round{flex:0 0 50px}
+.gbtn svg{width:20px;height:20px}
+.credit{font-size:11px;color:var(--label-3);margin:6px 6px 0}
+
+/* ---------- section ---------- */
+.sec{font-size:22px;font-weight:700;letter-spacing:-.02em;margin:26px 4px 10px;display:flex;justify-content:space-between;align-items:baseline}
+.sec small{font-size:15px;font-weight:400;color:var(--spirit)}
+.card{background:var(--card);border-radius:22px;padding:18px}
+
+/* ---------- rings ---------- */
+.rings-card{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center}
+.rings{width:150px;height:150px;position:relative}
+.rings svg{width:100%;height:100%;overflow:visible}
+.legend{display:flex;flex-direction:column;gap:12px;min-width:0}
+.lg b{display:block;font-size:13px;font-weight:600;color:var(--label-2)}
+.lg span{display:block;font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.15}
+.lg i{font-style:normal;font-size:15px;color:var(--label-2);font-weight:500}
+.lg.father span{color:var(--father)} .lg.son span{color:var(--son)} .lg.spirit span{color:var(--spirit)}
+.begin{margin-top:16px;width:100%;height:52px;border-radius:999px;background:var(--label);color:var(--bg);font-weight:600;font-size:17px;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s}
+.begin:active{transform:scale(.97)}
+.begin svg{width:18px;height:18px}
+.next{font-size:13px;color:var(--label-2);text-align:center;margin-top:10px}
+
+/* ---------- rows ---------- */
+.list{background:var(--card);border-radius:22px;overflow:hidden}
+.row{display:flex;align-items:center;gap:14px;padding:12px 16px;min-height:64px;width:100%;text-align:left}
+.row + .row{border-top:.5px solid var(--sep);margin-left:0}
+.thumb{width:52px;height:52px;border-radius:12px;object-fit:cover;flex:none}
+.ico{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex:none;color:#fff}
+.ico svg{width:19px;height:19px}
+.row .t{flex:1;min-width:0}
+.row .t b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em}
+.row .t span{display:block;font-size:14px;color:var(--label-2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{width:9px;height:15px;color:var(--label-3)}
+.mine{font-family:var(--f-word);font-size:19px;line-height:1.45;white-space:pre-line;margin:6px 0 0}
+.mine-meta{font-size:13px;color:var(--label-2);font-weight:600}
+
+/* ---------- tab bar ---------- */
+.tabbar{position:absolute;left:12px;right:12px;bottom:calc(20px + env(safe-area-inset-bottom,0px));height:66px;border-radius:999px;display:flex;align-items:center;padding:0 5px;z-index:20;
+  background:var(--glass);border:.5px solid var(--glass-edge);box-shadow:var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.4);-webkit-backdrop-filter:blur(24px) saturate(1.9);backdrop-filter:blur(24px) saturate(1.9)}
+.tab{flex:1;height:56px;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;font-weight:600;color:var(--label)}
+.tab svg{width:25px;height:25px}
+.tab[aria-selected="true"]{background:var(--fill);color:var(--son)}
+
+.toast{position:absolute;left:50%;top:64px;transform:translate(-50%,-10px);opacity:0;transition:.25s;z-index:40;padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap;
+  background:var(--glass);border:.5px solid var(--glass-edge);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true"><defs>
+  <symbol id="s-today" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+  <symbol id="s-bible" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3.5h11.5a1 1 0 0 1 1 1V20H7a2 2 0 0 1-2-2V4.5a1 1 0 0 1 1-1z"/><path d="M5 18a2 2 0 0 1 2-2h11.5"/><path d="M11.8 7v5M9.6 8.8h4.4" stroke-linecap="round"/></symbol>
+  <symbol id="s-pray" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.4 21 8 17.5V11l3-6.5c.4-.8 1.4-.6 1.4.3V21"/><path d="M12.6 21 16 17.5V11l-3-6.5"/><path d="M8 13 5.5 15.5M16 13l2.5 2.5"/></symbol>
+  <symbol id="s-journal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.5 11.5c0 4.4-3.8 8-8.5 8-1.3 0-2.6-.3-3.7-.8L3.5 20l1.4-3.6A7.6 7.6 0 0 1 3.5 11.5c0-4.4 3.8-8 8.5-8s8.5 3.6 8.5 8z"/></symbol>
+  <symbol id="s-sword" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4l-1 4.5L9.5 18 6 14.5 15.5 5z"/><path d="M5 13l6 6M7 17l-3 3"/></symbol>
+  <symbol id="s-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 20s-7.5-4.5-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.5-7.5 10-7.5 10z"/></symbol>
+  <symbol id="s-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11M8 7.5l4-4 4 4M6 11v8.5h12V11"/></symbol>
+  <symbol id="s-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2v13.6L19 12z"/></symbol>
+  <symbol id="s-flame" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c.6 3.2 4.5 5.4 4.5 10a4.5 4.5 0 0 1-9 0c0-2.2 1.2-3.6 2-4.6.3 1.6 1 2.5 1.8 2.9C11 8.6 11 5.4 12 2.5z"/></symbol>
+  <symbol id="s-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1z"/></symbol>
+  <symbol id="s-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5.5" y="10.5" width="13" height="9.5" rx="2.5" fill="currentColor" stroke="none"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+  <symbol id="s-chev" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5 7.5 7.5l-6 6"/></symbol>
+</defs></svg>
+
+<div class="stage">
+  <div class="device">
+    <div class="screen">
+      <div class="island"></div>
+      <div class="status"><span>6:12</span><span style="font-size:13px">●●● 91</span></div>
+
+      <div class="scroll" id="scroll">
+        <header class="head">
+          <div>
+            <div class="date">Thursday, October 2</div>
+            <h1 class="title" id="greet">Good morning, Bryan</h1>
+          </div>
+          <div class="head-r">
+            <span class="chip" aria-label="23 day streak"><svg width="16" height="16" style="color:var(--father)"><use href="#s-flame"/></svg><span id="streak">23</span></span>
+            <button class="avatar" aria-label="You">B</button>
+          </div>
+        </header>
+
+        <article class="votd" aria-label="Verse of the day">
+          <img src="{{IMG_verse}}" alt="Twilight over a mountain lake, painted by Frederic Edwin Church, 1860">
+          <div class="top"><div class="lab">Verse of the Day</div><div class="ref">John 15:4</div></div>
+          <p class="v">Remain in me, and I in you.</p>
+          <div class="acts">
+            <button class="gbtn" data-toast="Saved to your Sword"><svg><use href="#s-heart"/></svg>Keep</button>
+            <button class="gbtn" data-toast="Opening prayer…"><svg><use href="#s-pray"/></svg>Pray this</button>
+            <button class="gbtn round" aria-label="Share" data-toast="Share sheet"><svg><use href="#s-share"/></svg></button>
+          </div>
+        </article>
+        <div class="credit">Placeholder art: Frederic Edwin Church, Twilight in the Wilderness, 1860 · public domain</div>
+
+        <h2 class="sec">Rootwork <small id="mins">~20 min</small></h2>
+        <section class="card" aria-label="Today's rootwork">
+          <div class="rings-card">
+            <div class="rings" id="rings" role="img" aria-label="Trinity rings"></div>
+            <div class="legend">
+              <div class="lg father"><b>Pray · the Father</b><span id="l0">0<i>/2</i></span></div>
+              <div class="lg son"><b>Read · the Son</b><span id="l1">0<i>/1</i></span></div>
+              <div class="lg spirit"><b>Write · the Spirit</b><span id="l2">0<i>/3</i></span></div>
+            </div>
+          </div>
+          <button class="begin" id="begin"><svg><use href="#s-play"/></svg><span id="begin-l">Begin</span></button>
+          <div class="next" id="next">First: pray. "Open my eyes, that I may see wondrous things out of your law."</div>
+        </section>
+
+        <h2 class="sec">Today</h2>
+        <div class="list">
+          <button class="row" data-toast="Opens Luke 10 in Bible">
+            <img class="thumb" src="{{IMG_son}}" alt="">
+            <div class="t"><b>Luke 10</b><span>The seventy · The Samaritan · Mary and Martha</span></div>
+            <svg class="chev"><use href="#s-chev"/></svg>
+          </button>
+          <button class="row" data-toast="Opens Psalm 119 in Bible">
+            <img class="thumb" src="{{IMG_father}}" alt="">
+            <div class="t"><b>Psalm 119 · Proverbs 2</b><span>Alongside, every day</span></div>
+            <svg class="chev"><use href="#s-chev"/></svg>
+          </button>
+          <button class="row" data-toast="Night watch reminder at 9:30 PM">
+            <span class="ico" style="background:#5856D6"><svg><use href="#s-moon"/></svg></span>
+            <div class="t"><b>Night watch</b><span>9:30 PM · thank, confess, lay it down</span></div>
+            <svg class="chev"><use href="#s-chev"/></svg>
+          </button>
+          <button class="row" data-toast="5 apps open when Rootwork is done">
+            <span class="ico" style="background:#8E8E93"><svg><use href="#s-lock"/></svg></span>
+            <div class="t"><b id="gate-t">5 apps resting</b><span id="gate-s">They open when your rings close</span></div>
+            <svg class="chev"><use href="#s-chev"/></svg>
+          </button>
+        </div>
+
+        <h2 class="sec">From your own hand</h2>
+        <section class="card">
+          <div class="mine-meta">Prayer · September</div>
+          <p class="mine">Lord as long as you give me breath
+You have a purpose for me
+So let your will be done
+And let me worry no more</p>
+          <div class="row" style="padding:12px 0 0;min-height:0;gap:8px">
+            <button class="chip" style="box-shadow:none;background:var(--fill);border:0" data-toast="Opens in Journal">Read all</button>
+            <button class="chip" style="box-shadow:none;background:var(--fill);border:0" data-toast="Sent to Ricky">Send to Ricky</button>
+          </div>
+        </section>
+
+        <h2 class="sec">Memory verse <small>Week 6</small></h2>
+        <section class="card">
+          <p class="mine" style="margin:0">I have hidden your word in my heart, that I might not sin against you.</p>
+          <div class="mine-meta" style="margin-top:8px;color:var(--son)">Psalm 119:11</div>
+        </section>
+      </div>
+
+      <nav class="tabbar" role="tablist" aria-label="Tabs">
+        <button class="tab" role="tab" aria-selected="true"><svg><use href="#s-today"/></svg>Today</button>
+        <button class="tab" role="tab" aria-selected="false"><svg><use href="#s-bible"/></svg>Bible</button>
+        <button class="tab" role="tab" aria-selected="false"><svg><use href="#s-pray"/></svg>Pray</button>
+        <button class="tab" role="tab" aria-selected="false"><svg><use href="#s-journal"/></svg>Journal</button>
+        <button class="tab" role="tab" aria-selected="false"><svg><use href="#s-sword"/></svg>Sword</button>
+      </nav>
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Six steps feed three rings: Pray (pray first, pray it back), Read (chapter), Write (verse, reflect, action). */
+const STEPS=[
+  {ring:0,label:"Pray first",next:"Next: read Luke 10."},
+  {ring:1,label:"Read Luke 10",next:"Next: write the verse that stopped you."},
+  {ring:2,label:"Write one verse",next:"Next: what it shows about God, and about you."},
+  {ring:2,label:"About God, about me",next:"Next: one action for today. James 1:22"},
+  {ring:2,label:"One action",next:"Last: pray the verse back to him."},
+  {ring:0,label:"Pray it back",next:"Rings closed. Remain in him today."},
+];
+const GOAL=[2,1,3];
+let done=0;
+try{done=+localStorage.getItem("rw-today-done")||0}catch(e){}
+const $=s=>document.querySelector(s);
+
+/* Three rings in a triangle, overlapping like the old Trinity diagram. Each fills like an Activity ring. */
+function drawRings(){
+  const prog=[0,0,0]; STEPS.slice(0,done).forEach(s=>prog[s.ring]++);
+  const R=40, W=13, C=2*Math.PI*R;
+  const centers=[[75,48],[50,93],[100,93]];
+  const vars=["--father","--son","--spirit"];
+  $("#rings").innerHTML=`<svg viewBox="0 0 150 150">${centers.map(([x,y],i)=>{
+    const p=prog[i]/GOAL[i];
+    return `<circle cx="${x}" cy="${y}" r="${R}" fill="none" stroke="var(${vars[i]})" stroke-opacity=".2" stroke-width="${W}"/>
+      <circle cx="${x}" cy="${y}" r="${R}" fill="none" stroke="var(${vars[i]})" stroke-width="${W}" stroke-linecap="round"
+        stroke-dasharray="${C}" stroke-dashoffset="${C*(1-p)}" transform="rotate(-90 ${x} ${y})" style="transition:stroke-dashoffset .8s cubic-bezier(.2,.8,.2,1)"/>`}).join("")}</svg>`;
+  prog.forEach((n,i)=>$("#l"+i).innerHTML=`${n}<i>/${GOAL[i]}</i>`);
+  const complete=done>=STEPS.length;
+  $("#begin-l").textContent=complete?"Review today":done?`Continue · ${STEPS[done].label}`:"Begin";
+  $("#next").textContent=done?STEPS[done-1].next:'First: pray. "Open my eyes, that I may see wondrous things out of your law."';
+  $("#streak").textContent=complete?24:23;
+  $("#greet").textContent=complete?"Remain in him, Bryan":"Good morning, Bryan";
+  $("#gate-t").textContent=complete?"5 apps open":"5 apps resting";
+  $("#gate-s").textContent=complete?"Rootwork done at 6:31 AM":"They open when your rings close";
+  $("#mins").textContent=complete?"Done":`~${Math.max(3,20-done*3)} min`;
+}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),1800)}
+$("#begin").addEventListener("click",()=>{
+  if(done>=STEPS.length){done=0;toast("Reset for the demo")}else{toast(STEPS[done].label+" ✓");done++}
+  try{localStorage.setItem("rw-today-done",done)}catch(e){}
+  drawRings();
+});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-toast]");if(b)toast(b.dataset.toast)});
+drawRings();
+</script>

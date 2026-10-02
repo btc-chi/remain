@@ -1,0 +1,215 @@
+[
+ {
+  "id": "grieving",
+  "name": "Grieving",
+  "symbol": "leaf",
+  "tag": "grief",
+  "refs": [
+   "Psalm 34:18",
+   "Psalm 23:4",
+   "Psalm 42:5",
+   "Revelation 21:4",
+   "John 11:25",
+   "Philippians 1:21",
+   "Lamentations 3:22-23"
+  ]
+ },
+ {
+  "id": "worried",
+  "name": "Worried",
+  "symbol": "cloud.rain",
+  "tag": "anxiety",
+  "refs": [
+   "Matthew 6:34",
+   "Philippians 4:6-7",
+   "1 Peter 5:7",
+   "Matthew 6:25",
+   "Matthew 6:27"
+  ]
+ },
+ {
+  "id": "confused",
+  "name": "Confused",
+  "symbol": "questionmark.circle",
+  "tag": "confusion",
+  "refs": [
+   "Proverbs 3:5-6",
+   "Psalm 119:105",
+   "Psalm 119:18",
+   "Romans 8:28"
+  ]
+ },
+ {
+  "id": "tempted",
+  "name": "Tempted",
+  "symbol": "flame",
+  "tag": "temptation",
+  "refs": [
+   "1 Corinthians 10:13",
+   "James 4:7",
+   "Psalm 119:11",
+   "Matthew 4:1-11"
+  ]
+ },
+ {
+  "id": "angry",
+  "name": "Angry or snarky",
+  "symbol": "bolt",
+  "tag": "anger",
+  "refs": [
+   "James 1:19-20",
+   "Ephesians 4:26",
+   "Galatians 5:22-23",
+   "Micah 6:8",
+   "Luke 6:31"
+  ]
+ },
+ {
+  "id": "afraid",
+  "name": "Afraid",
+  "symbol": "exclamationmark.shield",
+  "tag": "fear",
+  "refs": [
+   "Isaiah 41:10",
+   "Psalm 23:4",
+   "Joshua 1:9"
+  ]
+ },
+ {
+  "id": "guilty",
+  "name": "Guilty after a fall",
+  "symbol": "arrow.uturn.backward",
+  "tag": "confess",
+  "refs": [
+   "1 John 1:9",
+   "Romans 8:1",
+   "Psalm 51:10"
+  ]
+ },
+ {
+  "id": "weak",
+  "name": "Weak or tired",
+  "symbol": "battery.25percent",
+  "tag": "discouragement",
+  "refs": [
+   "2 Corinthians 12:9",
+   "Isaiah 40:31",
+   "Matthew 11:28-30"
+  ]
+ },
+ {
+  "id": "doubting",
+  "name": "Doubting",
+  "symbol": "cloud.fog",
+  "tag": "doubt",
+  "refs": [
+   "Mark 9:24",
+   "John 14:9"
+  ]
+ },
+ {
+  "id": "surrender",
+  "name": "Wrestling with his will",
+  "symbol": "hands.and.sparkles",
+  "tag": "surrender",
+  "refs": [
+   "Matthew 26:39",
+   "Proverbs 3:5-6",
+   "Matthew 6:33",
+   "Romans 12:2"
+  ]
+ },
+ {
+  "id": "others",
+  "name": "Caring what others think",
+  "symbol": "person.2",
+  "tag": "fear-of-man",
+  "refs": [
+   "Matthew 5:13",
+   "Psalm 118:22",
+   "Matthew 5:16",
+   "John 14:6"
+  ]
+ },
+ {
+  "id": "identity",
+  "name": "Forgetting who I am",
+  "symbol": "person.crop.circle",
+  "tag": "identity",
+  "refs": [
+   "Psalm 139:14",
+   "John 1:48",
+   "2 Corinthians 5:17",
+   "John 15:16"
+  ]
+ },
+ {
+  "id": "suffering",
+  "name": "Suffering",
+  "symbol": "cross",
+  "tag": "suffering",
+  "refs": [
+   "Romans 5:3-5",
+   "James 1:2-4",
+   "1 Peter 4:12-13"
+  ]
+ },
+ {
+  "id": "stand",
+  "name": "Need to stand firm",
+  "symbol": "shield.lefthalf.filled",
+  "tag": "stand",
+  "refs": [
+   "Ephesians 6:13-17",
+   "Matthew 7:24-25",
+   "2 Timothy 4:7-8"
+  ]
+ },
+ {
+  "id": "comfortable",
+  "name": "Comfortable",
+  "symbol": "sun.max",
+  "tag": "comfortable",
+  "refs": [
+   "Deuteronomy 8:10-18",
+   "James 1:17"
+  ]
+ },
+ {
+  "id": "weary",
+  "name": "Tired of doing good",
+  "symbol": "hourglass",
+  "tag": "weary",
+  "refs": [
+   "Galatians 6:9"
+  ]
+ },
+ {
+  "id": "asked",
+  "name": "Asked how I know",
+  "symbol": "bubble.left.and.bubble.right",
+  "tag": "asked",
+  "refs": [
+   "John 9:25",
+   "1 John 5:13"
+  ]
+ },
+ {
+  "id": "household",
+  "name": "My household",
+  "symbol": "house",
+  "tag": "household",
+  "refs": [
+   "Joshua 24:15"
+  ]
+ },
+ {
+  "id": "unfinished",
+  "name": "Feeling far from done",
+  "symbol": "figure.walk",
+  "tag": "unfinished",
+  "refs": [
+   "Philippians 1:6"
+  ]
+ }
+]

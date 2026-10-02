@@ -1,0 +1,111 @@
+# Generate the Xcode project on a Mac:
+#   brew install xcodegen && cd ios && xcodegen && open Rootwork.xcodeproj
+name: Rootwork
+options:
+  bundleIdPrefix: app.rootwork
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"            # Swift 6 compiler, Swift 5 language mode (lighter concurrency checking)
+    DEVELOPMENT_TEAM: ""          # set your team ID (Xcode > Settings > Accounts), or pick it in Signing & Capabilities
+    MARKETING_VERSION: "0.2.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  Rootwork:
+    type: application
+    platform: iOS
+    sources:
+      - path: Rootwork
+        excludes: ["Assets.xcassets/ART-CREDITS.txt"]
+    entitlements:
+      path: Rootwork/Rootwork.entitlements
+      properties:
+        com.apple.developer.family-controls: true
+        com.apple.security.application-groups: [group.app.rootwork]
+    info:
+      path: Rootwork/Info.plist
+      properties:
+        CFBundleDisplayName: Rootwork
+        UILaunchScreen: {}
+        UIApplicationSupportsIndirectInputEvents: true
+        UIBackgroundModes: [audio]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.rootwork.Rootwork
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    dependencies:
+      - target: GateMonitor
+      - target: GateShield
+      - target: RootworkWidgets
+
+  # Rings and verse of the day on the Home and Lock Screen.
+  RootworkWidgets:
+    type: app-extension
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.rootwork.Rootwork.RootworkWidgets
+    sources:
+      - RootworkWidgets
+      - Rootwork/Shared/TrinityShared.swift
+      - Rootwork/Shared/WidgetBridge.swift
+      - path: Rootwork/Assets.xcassets
+        excludes: ["ART-CREDITS.txt"]
+    entitlements:
+      path: RootworkWidgets/RootworkWidgets.entitlements
+      properties:
+        com.apple.security.application-groups: [group.app.rootwork]
+    info:
+      path: RootworkWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: Rootwork
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+
+  # Re-rests chosen apps every morning at 4 AM until today's Rootwork is complete.
+  GateMonitor:
+    type: app-extension
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.rootwork.Rootwork.GateMonitor
+    sources:
+      - GateMonitor
+      - Rootwork/Shared/GateShared.swift
+    entitlements:
+      path: GateMonitor/GateMonitor.entitlements
+      properties:
+        com.apple.developer.family-controls: true
+        com.apple.security.application-groups: [group.app.rootwork]
+    info:
+      path: GateMonitor/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.deviceactivity.monitor-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).GateMonitor
+
+  # Custom "Abide first." shield shown over a resting app.
+  GateShield:
+    type: app-extension
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.rootwork.Rootwork.GateShield
+    sources: [GateShield]
+    entitlements:
+      path: GateShield/GateShield.entitlements
+      properties:
+        com.apple.developer.family-controls: true
+        com.apple.security.application-groups: [group.app.rootwork]
+    info:
+      path: GateShield/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettingsUI.shield-configuration-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).GateShield

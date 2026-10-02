@@ -1,0 +1,1278 @@
+[
+ {
+  "id": "start-root",
+  "title": "The Root Work",
+  "note": "Stay connected. The vine does the work.",
+  "blocks": [
+   {
+    "type": "paragraph",
+    "text": "A walking guide, built from one conversation",
+    "dim": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Stay connected. The vine does the work.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 15:5",
+    "caption": "John 15:5",
+    "text": "I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.",
+    "lead": true
+   },
+   {
+    "type": "paragraph",
+    "text": "You grew up Catholic. You did not pay attention in Sunday school. A few weeks ago that changed, and now it is personal. This guide holds everything from our study in one place, so you can read it, act on it, and build from it.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "start",
+  "title": "Start here",
+  "note": "Three things before anything else.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "One warning, because it protects the rest"
+   },
+   {
+    "type": "paragraph",
+    "text": "Jesus described people a few weeks into faith. Some seed lands on rock. Those people receive the word with joy. They believe for a while. Then a test comes, and they fall away. He gives the reason: they have no root.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Luke 8:13",
+    "caption": "Luke 8:13",
+    "text": "Those on the rock are they who, when they hear, receive the word with joy; but these have no root, who believe for a while, then fall away in time of temptation.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Your joy now is real. Joy alone does not hold you in a storm. Roots hold you. Roots are daily Scripture, prayer, a church, and obedience. Everything below is root work.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Test what you are told"
+   },
+   {
+    "type": "scripture",
+    "ref": "Acts 17:11",
+    "caption": "Acts 17:11",
+    "text": "...they received the word with all readiness of mind, examining the Scriptures daily to see whether these things were so.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "That includes this guide. Check every claim against the text.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "About the translation"
+   },
+   {
+    "type": "paragraph",
+    "text": "Scripture here is the World English Bible, which is public domain. You quote the NIV, so the wording will differ slightly in places. The meaning does not. Every passage carries its reference so you can pull the translation you prefer.",
+    "dim": true
+   },
+   {
+    "type": "paragraph",
+    "text": "Each scripture block in this file also carries a data-ref attribute with its reference. If you build the app, you can parse this file and link every verse straight to your Bible API.",
+    "dim": true
+   }
+  ]
+ },
+ {
+  "id": "verses",
+  "title": "Your verses, corrected",
+  "note": "You said you botched them. You will lean on these, so they have to be exact.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "1. Romans 8:28 — not \"always doing good work\""
+   },
+   {
+    "type": "scripture",
+    "ref": "Romans 8:28",
+    "caption": "Romans 8:28",
+    "text": "We know that all things work together for good for those who love God, for those who are called according to his purpose.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "The verse does not say all things are good. It says God works inside all things, even bad ones, toward good. Read the next verse. It defines the good: you become like his Son.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "2. Galatians 5:22-23 — not Corinthians"
+   },
+   {
+    "type": "scripture",
+    "ref": "Galatians 5:22-23",
+    "caption": "Galatians 5:22-23",
+    "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control. Against such things there is no law.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "That is nine. You missed joy, peace, patience, and kindness. Note that \"fruit\" is singular. It is one fruit with nine parts. You do not pick the parts you like. You probably mixed this with 1 Corinthians 13, the love chapter.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "3. John 15:5 — you merged two verses"
+   },
+   {
+    "type": "paragraph",
+    "text": "The vine verse is at the top of this guide. \"Blessed is he who comes in the name of the Lord\" is a different text. It is Psalm 118:26, the crowd's shout at the entry into Jerusalem. You joined the vine and the parade.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "4. Romans 12:1-2 — you nearly had it"
+   },
+   {
+    "type": "scripture",
+    "ref": "Romans 12:1-2",
+    "caption": "Romans 12:1-2",
+    "text": "Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service. Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Add verse 1. The surrender comes first. The renewed mind comes after it. Note the word \"living.\" A dead sacrifice stays on the altar. A living one can climb off. So this is a daily choice.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "5. The troubled heart — four moments, not one"
+   },
+   {
+    "type": "scripture",
+    "ref": "John 14:1",
+    "caption": "John 14:1 — the Last Supper",
+    "text": "Don't let your heart be troubled. Believe in God. Believe also in me.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 14:27",
+    "caption": "John 14:27 — the Last Supper",
+    "text": "Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don't let your heart be troubled, neither let it be fearful.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 16:33",
+    "caption": "John 16:33 — end of his last teaching",
+    "text": "In the world you have trouble; but cheer up! I have overcome the world.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 20:19",
+    "caption": "John 20:19 — after the resurrection",
+    "text": "Peace be to you.",
+    "lead": false
+   },
+   {
+    "type": "note",
+    "text": "The pattern. In John 12:27 his soul is troubled. In 13:21 he is troubled again. In 14:1 he tells his friends not to be troubled. He takes the trouble and gives them the peace. In 20:19-20 he says \"Peace be to you\" and then shows them his hands and his side. The scars are the price of your peace."
+   },
+   {
+    "type": "heading",
+    "text": "6. John 14:6 — you had this one exact"
+   },
+   {
+    "type": "scripture",
+    "ref": "John 14:6",
+    "caption": "John 14:6",
+    "text": "I am the way, the truth, and the life. No one comes to the Father, except through me.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Also from the Last Supper, the same night as \"do not let your heart be troubled.\" It is his answer to Thomas, who asked how they could know the way.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "7 and 8. Psalm 139 — both of yours are in one chapter"
+   },
+   {
+    "type": "scripture",
+    "ref": "Psalm 139:8",
+    "caption": "Psalm 139:8",
+    "text": "If I ascend up into heaven, you are there. If I make my bed in Sheol, behold, you are there!",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Psalm 139:14",
+    "caption": "Psalm 139:14",
+    "text": "I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Sheol means the grave. No place is outside his reach, not even death. Read the whole psalm. He knows you (1-6). He is everywhere (7-12). He made you (13-16). It closes with a prayer: search me, God, and know my heart (23-24).",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "9. Psalm 118:22 — the cornerstone"
+   },
+   {
+    "type": "scripture",
+    "ref": "Psalm 118:22",
+    "caption": "Psalm 118:22",
+    "text": "The stone which the builders rejected has become the head of the corner.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "This comes from the same psalm as the shout at the entry. Jesus quotes it in the Temple a few days later (Luke 20:17). Peter quotes it in Acts 4:11. The stones that could cry out, the stones that fall in AD 70, and the cornerstone all sit in the same week.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "10. Giving yourself to him"
+   },
+   {
+    "type": "scripture",
+    "ref": "Luke 9:23",
+    "caption": "Luke 9:23",
+    "text": "If anyone desires to come after me, let him deny himself, take up his cross, and follow me.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "The phrase you reached for about glory is John 17:1-2. Jesus prays, \"Father, the hour has come. Glorify your Son, that your Son may glorify you,\" and then speaks of giving eternal life to all whom the Father has given him.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 17:20",
+    "caption": "John 17:20",
+    "text": "Not for these only do I pray, but for those also who believe in me through their word.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "That is you. He prayed for you in that room, before the cross. You give yourself to him. The Father already gave you to him.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "map",
+  "title": "The mind map",
+  "note": "Eleven branches. One root. Print this one.",
+  "blocks": [
+   {
+    "type": "map",
+    "text": "FOUNDATION  Matthew 7:24-25   hear his words and do them\n│\nTHE VINE    John 15:5\nWHY         Romans 5:8 · Ephesians 2:8-10 · 2 Corinthians 5:17\n│\n├─ 1  KNOW HIM — the Word\n│     2 Timothy 3:16-17\n│     Psalm 119:11 · Psalm 119:105\n│     James 1:22          read it, then do it\n│\n├─ 2  ABIDE — prayer\n│     Matthew 6:9-13      the pattern\n│     Mark 1:35           his habit\n│     Philippians 4:6-7\n│\n├─ 3  BE TRANSFORMED — renewed mind\n│     Romans 12:1-2\n│     Philippians 4:8\n│     2 Corinthians 10:5\n│\n├─ 4  WALK BY THE SPIRIT\n│     John 14:26\n│     Romans 8:14-16\n│     Galatians 5:16 · Galatians 5:25\n│\n├─ 5  DO THE FATHER'S WILL\n│     Matthew 22:37-39\n│     Micah 6:8\n│     1 Thessalonians 5:16-18\n│\n├─ 6  BEAR FRUIT, SOW GOOD\n│     Galatians 5:22-23\n│     John 15:8\n│     Galatians 6:9-10\n│\n├─ 7  HAVE PEACE\n│     John 14:27 · John 16:33\n│     Isaiah 26:3\n│     Matthew 6:33-34\n│\n├─ 8  STAND IN TRIALS\n│     James 1:2-4\n│     Romans 5:3-5\n│     2 Corinthians 12:9\n│\n├─ 9  REMEMBER HIM IN GOOD TIMES\n│     Deuteronomy 8:10-18\n│     James 1:17\n│     Philippians 4:11-13\n│\n├─ 10 STAY WITH HIS PEOPLE\n│     Acts 2:42\n│     Hebrews 10:24-25\n│\n└─ 11 GO AND TELL\n      Mark 5:19           start at home\n      Matthew 28:19-20\n      1 Peter 3:15 · Colossians 4:5-6"
+   }
+  ]
+ },
+ {
+  "id": "who",
+  "title": "Who he is",
+  "note": "You said he was a man, and that this makes him relatable. True, and half the truth.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "The man"
+   },
+   {
+    "type": "scripture",
+    "ref": "Hebrews 4:15",
+    "caption": "Hebrews 4:15",
+    "text": "For we don't have a high priest who can't be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "He suffered when he was tempted, so he can help you when you are tempted (Hebrews 2:18).",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "The God"
+   },
+   {
+    "type": "scripture",
+    "ref": "John 1:1,14",
+    "caption": "John 1:1, 14",
+    "text": "In the beginning was the Word, and the Word was with God, and the Word was God... The Word became flesh, and lived among us.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "He was in the form of God. He took the form of a servant and obeyed to the point of a cross (Philippians 2:6-8).",
+    "dim": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Both matter. A man alone cannot save you. A God who never became a man cannot fully understand you. He is both. Hebrews 4:16 gives you the result: come to his throne with confidence.",
+    "dim": false
+   },
+   {
+    "type": "paragraph",
+    "text": "The church stated this at the Council of Chalcedon, AD 451: fully God and fully man, in one person.",
+    "dim": true
+   }
+  ]
+ },
+ {
+  "id": "life",
+  "title": "His time on earth",
+  "note": "About 33 years. Roughly three of them public.",
+  "blocks": [
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "c. 6-4 BC",
+      "text": "Born in Bethlehem. Herod died about 4 BC, which is why the date is earlier than you would expect."
+     },
+     {
+      "label": "The silent years",
+      "text": "Nazareth. One story survives: age twelve, in the Temple (Luke 2:41-52). He worked as a craftsman (Mark 6:3)."
+     },
+     {
+      "label": "c. AD 27-29",
+      "text": "Baptism. He was about thirty (Luke 3:23). The Father says \"You are my beloved Son\" before Jesus performs one miracle."
+     },
+     {
+      "label": "Immediately after",
+      "text": "Forty days in the wilderness and three temptations (Luke 4:1-13)."
+     },
+     {
+      "label": "About three years",
+      "text": "Ministry. John names three Passovers (2:13, 6:4, 11:55)."
+     },
+     {
+      "label": "Luke 9:51",
+      "text": "The turn. He set his face to go to Jerusalem. He knew what was waiting."
+     },
+     {
+      "label": "The last week",
+      "text": "The entry, the Temple, the supper, Gethsemane, the trials, the cross."
+     },
+     {
+      "label": "c. AD 30 or 33",
+      "text": "Crucified and raised on the third day."
+     },
+     {
+      "label": "Forty days",
+      "text": "Appearances (Acts 1:3), then the ascension from the Mount of Olives."
+     },
+     {
+      "label": "Ten days later",
+      "text": "Pentecost. The Spirit comes. Three thousand believe in one day (Acts 2:41)."
+     }
+    ]
+   },
+   {
+    "type": "note",
+    "text": "Watch the bookends. His first recorded words, age twelve: \"Didn't you know that I must be in my Father's house?\" (Luke 2:49). His last words on the cross: \"Father, into your hands I commit my spirit\" (Luke 23:46). His whole life sits between those two sentences."
+   }
+  ]
+ },
+ {
+  "id": "joy",
+  "title": "His joys and his trials",
+  "note": "He was not a gloomy man. He was also a man of sorrows. Both are in the text.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "The good times"
+   },
+   {
+    "type": "list",
+    "items": [
+     "His first sign kept a wedding party going. John 2:1-11",
+     "He ate with sinners so often that enemies called him a glutton and a drunkard. The charge was false. The meals were real. Luke 7:34",
+     "He rejoiced greatly in the Holy Spirit. Luke 10:21",
+     "He took children in his arms and blessed them. Mark 10:16",
+     "His stories end in parties. The shepherd, the woman, and the father all say \"rejoice with me.\" Luke 15"
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "John 15:11",
+    "caption": "John 15:11",
+    "text": "I have spoken these things to you, that my joy may remain in you, and that your joy may be made full.",
+    "lead": false
+   },
+   {
+    "type": "heading",
+    "text": "The trials"
+   },
+   {
+    "type": "list",
+    "items": [
+     "Hungry after forty days. Matthew 4:2",
+     "Tired enough to sit down at a well. Asleep in a boat during a storm. John 4:6 · Mark 4:38",
+     "No home. \"The Son of Man has nowhere to lay his head.\" Matthew 8:20",
+     "His hometown tried to throw him off a cliff. Luke 4:29",
+     "His family said he was out of his mind. His brothers did not believe him. Mark 3:21 · John 7:5",
+     "Many followers left him. John 6:66",
+     "He wept at his friend's grave. John 11:35",
+     "In Gethsemane his sweat fell like drops of blood. Luke 22:44",
+     "A friend betrayed him. His closest friend denied him. All of them ran.",
+     "On the cross: \"My God, my God, why have you forsaken me?\" That is the first line of Psalm 22. Mark 15:34"
+    ]
+   },
+   {
+    "type": "note",
+    "text": "For your family. His brother James did not believe in him. After the resurrection, Jesus appeared to James (1 Corinthians 15:7). James became a leader of the Jerusalem church and wrote the book that carries his name. A doubting brother became a pillar. Keep praying for yours."
+   }
+  ]
+ },
+ {
+  "id": "why",
+  "title": "Why he obeyed when it was hard",
+  "note": "You asked this directly. The text gives five answers.",
+  "blocks": [
+   {
+    "type": "steps",
+    "items": [
+     "Love. \"The world must know that I love the Father\" (John 14:31). Obedience was how he showed it. He asks the same of you: \"If you love me, keep my commandments\" (John 14:15).",
+     "It fed him. \"My food is to do the will of him who sent me\" (John 4:34). Obedience gave him strength. It did not only cost him strength.",
+     "Trust. He did only what he saw the Father doing (John 5:19). He never walked alone.",
+     "The joy ahead. He looked past the pain to the result. You are part of that result.",
+     "Honest prayer. Hebrews 5:7 says he prayed with loud cries and tears. It did not come easily. He wrestled, then said \"not my will, but yours.\""
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "Hebrews 12:2",
+    "caption": "Hebrews 12:2",
+    "text": "...who for the joy that was set before him endured the cross, despising its shame, and has sat down at the right hand of the throne of God.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Then Hebrews 5:8 adds the line you should sit with: he learned obedience from what he suffered. Jesus learned obedience through hardship. You will too.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "twelve",
+  "title": "The twelve",
+  "note": "Ordinary men. Broken in public. Used anyway.",
+  "blocks": [
+   {
+    "type": "paragraph",
+    "text": "Peter, Andrew, James, John, Philip, Bartholomew, Thomas, Matthew, James son of Alphaeus, Thaddaeus, Simon the Zealot, Judas Iscariot. Luke names \"Judas son of James\" where Mark has Thaddaeus. Most scholars say they are the same man.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Their troubles"
+   },
+   {
+    "type": "list",
+    "items": [
+     "Matthew collected taxes for Rome. Simon was a Zealot, a rebel against Rome. Jesus put both men on one team.",
+     "James and John wanted to call fire down on a village (Luke 9:54). He nicknamed them Sons of Thunder. They also asked for the best seats.",
+     "They argued about who was greatest, even at the Last Supper (Luke 22:24).",
+     "Thomas refused to believe without proof. Eight days later he said \"My Lord and my God!\" (John 20:28). That is one of the clearest statements in the New Testament that Jesus is God.",
+     "Peter walked on water, then sank. He confessed Jesus as Messiah, and a few verses later Jesus called him Satan. He swore he would die with Jesus, then denied him three times.",
+     "All of them fled (Mark 14:50). That is Zechariah 13:7 coming true. The shepherd was struck and the sheep scattered."
+    ]
+   },
+   {
+    "type": "heading",
+    "text": "Then the turn"
+   },
+   {
+    "type": "paragraph",
+    "text": "In John 21:15-19 Jesus asks Peter three times, \"Do you love me?\" Three denials, three restorations, then \"Follow me.\" About fifty days after the denial, Peter preached in Jerusalem and three thousand believed.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Acts 4:13",
+    "caption": "Acts 4:13",
+    "text": "Now when they saw the boldness of Peter and John, and had perceived that they were unlearned and ignorant men, they marveled. They recognized that they had been with Jesus.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "That answers your worry about Sunday school. Peter had no religious training at all. Time with Jesus was the difference. That is what you are doing now.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Paul"
+   },
+   {
+    "type": "paragraph",
+    "text": "He persecuted the church, then met Jesus on the road (Acts 9). In 2 Corinthians 11:24-27 he lists his trials: five whippings of thirty-nine lashes, three beatings with rods, one stoning, three shipwrecks. He wrote \"Rejoice in the Lord always\" from prison. In 1 Timothy 1:15 he calls himself the worst of sinners.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Romans 5:8",
+    "caption": "Romans 5:8",
+    "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "You said you are a sinner and he still wanted you. That is the verse for it.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "book",
+  "title": "How the Bible came together",
+  "note": "It is a library, not one book.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "Why your Catholic Bible has more books"
+   },
+   {
+    "type": "paragraph",
+    "text": "Protestant Bibles have 66 books: 39 Old Testament, 27 New. Catholic Bibles have 73. The extra seven are Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach, and Baruch, plus additions to Esther and Daniel. Catholics call them deuterocanonical. Protestants call them the Apocrypha. The Jewish Bible does not include them. The Council of Trent fixed the Catholic list in 1546.",
+    "dim": false
+   },
+   {
+    "type": "paragraph",
+    "text": "You do not need to settle this now. Every book in this guide is on both lists.",
+    "dim": true
+   },
+   {
+    "type": "heading",
+    "text": "The Old Testament"
+   },
+   {
+    "type": "paragraph",
+    "text": "Israel collected it over centuries. The Hebrew Bible has three parts: the Law, the Prophets, and the Writings. Jesus names that shape himself in Luke 24:44. In 1947 shepherds found the Dead Sea Scrolls, including a complete Isaiah scroll from about 125 BC. It is a thousand years older than the oldest copy known before it, and it matches closely.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "The New Testament"
+   },
+   {
+    "type": "list",
+    "items": [
+     "Paul's letters came first, roughly AD 48-65.",
+     "1 Corinthians 15:3-7 preserves a creed about the death, burial, resurrection, and appearances. Most scholars, including skeptics, date it to within a few years of the cross.",
+     "Mark was likely first, about AD 60-70. Matthew and Luke followed. John came last, about AD 90.",
+     "Luke states his method: he investigated carefully from eyewitnesses and wrote an orderly account (Luke 1:1-4).",
+     "The church did not invent the list. It recognized books already in use. The tests were apostolic link, agreement with the faith, and use across the churches.",
+     "Athanasius listed our exact 27 books in AD 367. Councils at Hippo (393) and Carthage (397) confirmed it.",
+     "More than 5,800 Greek manuscripts survive. No other ancient book comes close."
+    ]
+   },
+   {
+    "type": "heading",
+    "text": "The shelf"
+   },
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "Law · 5",
+      "text": "Genesis, Exodus, Leviticus, Numbers, Deuteronomy"
+     },
+     {
+      "label": "History · 12",
+      "text": "Joshua, Judges, Ruth, 1-2 Samuel, 1-2 Kings, 1-2 Chronicles, Ezra, Nehemiah, Esther"
+     },
+     {
+      "label": "Wisdom · 5",
+      "text": "Job, Psalms, Proverbs, Ecclesiastes, Song of Songs"
+     },
+     {
+      "label": "Major Prophets · 5",
+      "text": "Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel"
+     },
+     {
+      "label": "Minor Prophets · 12",
+      "text": "Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi. Minor means shorter, not lesser."
+     },
+     {
+      "label": "Gospels · 4",
+      "text": "Matthew, Mark, Luke, John"
+     },
+     {
+      "label": "History · 1",
+      "text": "Acts"
+     },
+     {
+      "label": "Paul · 13",
+      "text": "Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon"
+     },
+     {
+      "label": "Other letters · 8",
+      "text": "Hebrews, James, 1-2 Peter, 1-2-3 John, Jude"
+     },
+     {
+      "label": "Prophecy · 1",
+      "text": "Revelation"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "story",
+  "title": "The whole story in ten steps",
+  "note": "Every book sits somewhere on this line.",
+  "blocks": [
+   {
+    "type": "steps",
+    "items": [
+     "Creation. God makes a good world. Genesis 1-2",
+     "The fall. Humans rebel and death enters. Genesis 3:15 holds the first promise of a rescuer.",
+     "The promise. God chooses Abraham to bless all nations. Genesis 12:1-3",
+     "The rescue. God frees Israel from Egypt and gives the Law. The Passover lamb appears here. Exodus",
+     "The kingdom. God promises David a throne that lasts forever. 2 Samuel 7:12-16",
+     "The exile. Israel breaks the covenant. Babylon destroys Jerusalem in 586 BC. The prophets promise a new covenant. Jeremiah 31:31-34",
+     "The silence. About four hundred years between Malachi and John the Baptist.",
+     "The King. Jesus lives, dies, and rises. the Gospels",
+     "The church. The Spirit comes and the news spreads. Acts and the letters",
+     "The new creation. God lives with his people. Revelation 21:3-4"
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "Revelation 21:4",
+    "caption": "Revelation 21:4",
+    "text": "He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain any more.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "The man who wept over Jerusalem is the one who wipes away every tear.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "pray",
+  "title": "How to pray",
+  "note": "The disciples asked your exact question: \"Lord, teach us to pray.\" Luke 11:1.",
+  "blocks": [
+   {
+    "type": "paragraph",
+    "text": "He answered with the Our Father. You know it by heart from your Catholic years. Now pray it slowly, one line at a time, and mean each line.",
+    "dim": false
+   },
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "Our Father",
+      "text": "You speak to your Father, not a stranger. The Spirit lets you call him Abba (Romans 8:15)."
+     },
+     {
+      "label": "Hallowed be your name",
+      "text": "Start with worship, not requests."
+     },
+     {
+      "label": "Your will be done",
+      "text": "Put his plans above yours. This is Gethsemane in small form."
+     },
+     {
+      "label": "Daily bread",
+      "text": "Ask for today's needs. \"Daily\" means you come back tomorrow."
+     },
+     {
+      "label": "Forgive us, as we forgive",
+      "text": "Confess, and release grudges. He explains this in Matthew 6:14-15."
+     },
+     {
+      "label": "Deliver us",
+      "text": "Ask for protection."
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "text": "His own habits"
+   },
+   {
+    "type": "list",
+    "items": [
+     "Early, and alone. Mark 1:35",
+     "Often, away from the crowds. Luke 5:16",
+     "All night before a big decision. Luke 6:12",
+     "In secret, without empty repetition. Matthew 6:6-7",
+     "Honest, even raw. Mark 14:36"
+    ]
+   },
+   {
+    "type": "paragraph",
+    "text": "The Psalms show you can pray angry, sad, or afraid. When you have no words, Romans 8:26 says the Spirit prays for you. Luke 18:1 says to always pray and not give up.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Philippians 4:6-7",
+    "caption": "Philippians 4:6-7",
+    "text": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
+    "lead": false
+   }
+  ]
+ },
+ {
+  "id": "abide",
+  "title": "Abide and bear fruit",
+  "note": "John 15:1-17 is your core chapter. Read it every week.",
+  "blocks": [
+   {
+    "type": "paragraph",
+    "text": "The word translated \"remain\" or \"abide\" is menō. It means stay, live, make your home there. It is not a visit. It is an address.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "How you remain"
+   },
+   {
+    "type": "list",
+    "items": [
+     "His words remain in you. 15:7",
+     "You keep his commands. 15:10",
+     "You love one another. 15:12"
+    ]
+   },
+   {
+    "type": "heading",
+    "text": "The verse for your hard seasons"
+   },
+   {
+    "type": "scripture",
+    "ref": "John 15:2",
+    "caption": "John 15:2",
+    "text": "Every branch in me that doesn't bear fruit, he takes away. Every branch that bears fruit, he prunes, that it may bear more fruit.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Pruning hurts. It is not punishment. It is care for a branch that is already bearing. Keep this verse close when things get cut back.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "The verses for your doubts about being chosen"
+   },
+   {
+    "type": "scripture",
+    "ref": "John 15:13",
+    "caption": "John 15:13",
+    "text": "Greater love has no one than this, that someone lay down his life for his friends.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 15:15",
+    "caption": "John 15:15",
+    "text": "No longer do I call you servants... but I have called you friends.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 15:16",
+    "caption": "John 15:16",
+    "text": "You didn't choose me, but I chose you and appointed you, that you should go and bear fruit, and that your fruit should remain.",
+    "lead": false
+   },
+   {
+    "type": "note",
+    "text": "How fruit actually works. A branch does not strain to produce grapes. It stays connected, and the vine does the work. Philippians 2:13 says God works in you both to will and to act. Your job is the connection."
+   }
+  ]
+ },
+ {
+  "id": "spirit",
+  "title": "The Holy Spirit",
+  "note": "A correction first, because it will save you a lot of confusion.",
+  "blocks": [
+   {
+    "type": "paragraph",
+    "text": "You said you want to feel the Holy Spirit. Scripture does not measure him by feelings. It measures him by fruit and direction. Feelings rise and fall. Fruit lasts.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 3:8",
+    "caption": "John 3:8",
+    "text": "The wind blows where it wants to, and you hear its sound, but don't know where it comes from and where it is going. So is everyone who is born of the Spirit.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "He said that to Nicodemus, the man he told \"you must be born again.\" Nicodemus was also a secret believer, afraid of what people would say. At the burial he came out in the open with seventy-five pounds of spices (John 19:39). You are somewhere in his story.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "What the Spirit actually does"
+   },
+   {
+    "type": "list",
+    "items": [
+     "Teaches you and reminds you of Jesus's words. John 14:26",
+     "Shows you your sin. John 16:8",
+     "Guides you into truth. John 16:13",
+     "Confirms inside you that you are God's child. Romans 8:16",
+     "Helps you pray when you have no words. Romans 8:26",
+     "Grows the fruit. Galatians 5:22",
+     "Can be grieved by your sin. Ephesians 4:30"
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "Romans 8:16",
+    "caption": "Romans 8:16",
+    "text": "The Spirit himself testifies with our spirit that we are children of God.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "That is the inner certainty you described. In practice, keeping in step with the Spirit (Galatians 5:25) means this: obey the small prompt now, confess sin quickly, and stay in the Word he inspired.",
+    "dim": false
+   },
+   {
+    "type": "note",
+    "text": "On \"since I was a boy.\" Jesus said no one comes to him unless the Father draws him (John 6:44). What you felt as a boy may have been that drawing. Catholic teaching ties the Spirit to baptism. Many evangelicals tie his indwelling to conversion (Ephesians 1:13). The traditions disagree. Both agree God pursued you long before you answered."
+   }
+  ]
+ },
+ {
+  "id": "will",
+  "title": "The will of God",
+  "note": "Romans 12:2 gives you the method. These verses give you the content.",
+  "blocks": [
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "John 6:40",
+      "text": "That everyone who sees the Son and believes in him has eternal life."
+     },
+     {
+      "label": "1 Thess 4:3",
+      "text": "Your sanctification, including sexual purity. Stated as God's will in plain words."
+     },
+     {
+      "label": "1 Thess 5:16-18",
+      "text": "Always rejoice. Pray without ceasing. Give thanks in everything. \"This is the will of God in Christ Jesus toward you.\""
+     },
+     {
+      "label": "1 Peter 2:15",
+      "text": "Do good, and silence foolish talk against believers."
+     },
+     {
+      "label": "Micah 6:8",
+      "text": "Act justly, love mercy, walk humbly with your God."
+     },
+     {
+      "label": "Matthew 22:37-39",
+      "text": "Love God with everything. Love your neighbor as yourself. The whole Law hangs on these two."
+     }
+    ]
+   },
+   {
+    "type": "paragraph",
+    "text": "The rule: do the clear will you already know today. John 7:17 says anyone who chooses to do his will finds out whether the teaching is true. Obedience comes before more understanding.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "bank",
+  "title": "Verses for real moments",
+  "note": "This is the section you will use most. Build it into the app first.",
+  "blocks": [
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "Worried",
+      "text": "Matthew 6:34 · Philippians 4:6-7 · 1 Peter 5:7"
+     },
+     {
+      "label": "Afraid",
+      "text": "Isaiah 41:10 · Psalm 23:4 · Joshua 1:9"
+     },
+     {
+      "label": "Tempted",
+      "text": "1 Corinthians 10:13 · Matthew 4:1-11"
+     },
+     {
+      "label": "Guilty after a fall",
+      "text": "1 John 1:9 · Romans 8:1"
+     },
+     {
+      "label": "Doubting",
+      "text": "Mark 9:24"
+     },
+     {
+      "label": "Weak or tired",
+      "text": "2 Corinthians 12:9 · Isaiah 40:31 · Matthew 11:28-30"
+     },
+     {
+      "label": "Angry",
+      "text": "James 1:19-20 · Ephesians 4:26"
+     },
+     {
+      "label": "Suffering",
+      "text": "Romans 5:3-5 · James 1:2-4 · 1 Peter 4:12-13"
+     },
+     {
+      "label": "Comfortable",
+      "text": "Deuteronomy 8:10-18 · James 1:17"
+     },
+     {
+      "label": "Tired of doing good",
+      "text": "Galatians 6:9"
+     },
+     {
+      "label": "Asked \"how do you know?\"",
+      "text": "John 9:25 · 1 John 5:13"
+     },
+     {
+      "label": "Your household",
+      "text": "Joshua 24:15"
+     },
+     {
+      "label": "Feeling far from done",
+      "text": "Philippians 1:6"
+     }
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "Mark 9:24",
+    "caption": "Mark 9:24",
+    "text": "I believe. Help my unbelief!",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "2 Corinthians 12:9",
+    "caption": "2 Corinthians 12:9",
+    "text": "My grace is sufficient for you, for my power is made perfect in weakness.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Galatians 6:9",
+    "caption": "Galatians 6:9",
+    "text": "Let's not be weary in doing good, for we will reap in due season, if we don't give up.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Philippians 1:6",
+    "caption": "Philippians 1:6",
+    "text": "...being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ.",
+    "lead": false
+   },
+   {
+    "type": "heading",
+    "text": "How he fought temptation"
+   },
+   {
+    "type": "paragraph",
+    "text": "In Matthew 4, Satan tempts him three times. Jesus answers each time by quoting Deuteronomy. He fought with Scripture he already knew by heart. Your habit of repeating verses is the right weapon.",
+    "dim": false
+   },
+   {
+    "type": "scripture",
+    "ref": "Psalm 119:11",
+    "caption": "Psalm 119:11",
+    "text": "I have hidden your word in my heart, that I might not sin against you.",
+    "lead": false
+   },
+   {
+    "type": "note",
+    "text": "One rule for this whole section. Never take a verse out of its chapter. Philippians 4:13 is the classic case. People read \"I can do all things\" as a promise to win. In context it means Paul can be content whether he is hungry or full. Read the paragraph around every verse you memorize."
+   }
+  ]
+ },
+ {
+  "id": "tell",
+  "title": "Not scattered anymore",
+  "note": "You picked the right word. In Zechariah 13:7 and Mark 14:50, the sheep scattered. After Pentecost the same men stood in public.",
+  "blocks": [
+   {
+    "type": "scripture",
+    "ref": "Mark 5:19",
+    "caption": "Mark 5:19",
+    "text": "Go to your house, to your friends, and tell them what great things the Lord has done for you and how he had mercy on you.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "A man he healed wanted to leave with him. Jesus sent him home instead. Start where you are.",
+    "dim": false
+   },
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "Life first",
+      "text": "People see your good works and glorify your Father. Matthew 5:16"
+     },
+     {
+      "label": "Your story",
+      "text": "\"Though I was blind, now I see.\" The healed man could not answer every question. Nobody could argue him out of what happened to him. John 9:25"
+     },
+     {
+      "label": "Tone",
+      "text": "Give your answer with humility and respect. 1 Peter 3:15"
+     },
+     {
+      "label": "Online",
+      "text": "Speech always with grace, seasoned with salt. Arguments rarely win people. Grace does. Colossians 4:6"
+     },
+     {
+      "label": "Expect resistance",
+      "text": "His own brothers did not believe at first. The world will treat you as it treated him. John 15:18-20"
+     }
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "Joshua 24:15",
+    "caption": "Joshua 24:15",
+    "text": "...as for me and my house, we will serve Yahweh.",
+    "lead": false
+   }
+  ]
+ },
+ {
+  "id": "church",
+  "title": "Stay with his people",
+  "note": "A thread like ours can help you study. It cannot replace a church.",
+  "blocks": [
+   {
+    "type": "scripture",
+    "ref": "Acts 2:42",
+    "caption": "Acts 2:42",
+    "text": "They continued steadfastly in the apostles' teaching and fellowship, in the breaking of bread, and prayer.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Three of those four need other people. Hebrews 10:25 says do not give up meeting together.",
+    "dim": false
+   },
+   {
+    "type": "list",
+    "items": [
+     "Find a church that teaches the Bible directly.",
+     "Find an older believer to walk with you. Proverbs 27:17",
+     "Talk to a pastor about baptism and communion. Traditions differ on infant and believer's baptism, so your Catholic background makes that conversation worth having early."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "plan",
+  "title": "The reading plan",
+  "note": "One chapter a day. No rush.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "Phase 1 — his life, about three months"
+   },
+   {
+    "type": "rows",
+    "rows": [
+     {
+      "label": "Luke 1-24",
+      "text": "Start at his birth. A doctor's careful account."
+     },
+     {
+      "label": "Acts 1-28",
+      "text": "Luke's second volume. The disciples after the resurrection."
+     },
+     {
+      "label": "John 1-21",
+      "text": "Who he is."
+     },
+     {
+      "label": "Mark 1-16",
+      "text": "Fast and direct. Likely Peter's account."
+     }
+    ]
+   },
+   {
+    "type": "heading",
+    "text": "Phase 2 — how to live, about two months"
+   },
+   {
+    "type": "paragraph",
+    "text": "Romans. Galatians. Ephesians. Philippians. James. 1 John.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Phase 3 — the foundation"
+   },
+   {
+    "type": "paragraph",
+    "text": "Genesis and Exodus. Then the whole Bible in a year.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Alongside, every day"
+   },
+   {
+    "type": "paragraph",
+    "text": "One Psalm. One chapter of Proverbs. Proverbs has 31 chapters, so read the one matching today's date.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "The daily rhythm — twenty to thirty minutes"
+   },
+   {
+    "type": "steps",
+    "items": [
+     "Pray first. \"Open my eyes, that I may see wondrous things out of your law.\" Psalm 119:18.",
+     "Read one chapter.",
+     "Write down one verse that stands out.",
+     "Write what it shows about God, and about you.",
+     "Write one action for today. James 1:22: be doers of the word, not only hearers.",
+     "Pray the verse back to him."
+    ]
+   },
+   {
+    "type": "paragraph",
+    "text": "Memorize one verse a week. Start with your own, now corrected.",
+    "dim": false
+   }
+  ]
+ },
+ {
+  "id": "thread",
+  "title": "The thread we studied",
+  "note": "How one verse in Zechariah opened up a whole week of his life. Keep this as your example of how to read.",
+  "blocks": [
+   {
+    "type": "heading",
+    "text": "The prophecy, about 500 years earlier"
+   },
+   {
+    "type": "scripture",
+    "ref": "Zechariah 9:9",
+    "caption": "Zechariah 9:9",
+    "text": "Rejoice greatly, daughter of Zion! Shout, daughter of Jerusalem! Behold, your King comes to you! He is righteous, and having salvation; lowly, and riding on a donkey, even on a colt, the foal of a donkey.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "Hebrew poetry says each thing twice. Daughter of Zion and daughter of Jerusalem are one city. The donkey and the colt are one animal. Read the eight verses before it: God marches through the region like a conqueror. Then the king arrives on a donkey, not a war horse. Deuteronomy 17:16 told Israel's king not to collect horses. The horse was the animal of war.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "The day it happened"
+   },
+   {
+    "type": "paragraph",
+    "text": "He arranged it on purpose. He sent two disciples for a colt nobody had ridden (Luke 19:30). The crowd shouted \"Hosanna,\" which means \"save us, please\" (Psalm 118:25). They wanted a king who would drive out Rome.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Then he wept"
+   },
+   {
+    "type": "scripture",
+    "ref": "Luke 19:41-44",
+    "caption": "Luke 19:41-44",
+    "text": "When he came near, he saw the city and wept over it, saying, 'If you, even you, had known today the things which belong to your peace! But now, they are hidden from your eyes. For the days will come on you, when your enemies will throw up a barricade against you, surround you, hem you in on every side, and will dash you and your children within you to the ground. They will not leave in you one stone on another, because you didn't know the time of your visitation.'",
+    "lead": true
+   },
+   {
+    "type": "list",
+    "items": [
+     "The Greek word for \"wept\" here means loud wailing, not quiet tears. At Lazarus's grave a different, quieter word is used.",
+     "Three verses earlier he said that if the crowd went silent, the stones would cry out. Now he says no stone will be left on another. The same stones, twice.",
+     "\"The time of your visitation\" points back to Luke 1:68 and 1:78, where God visits his people. God came in person, and the city did not recognize him.",
+     "Rome destroyed Jerusalem in AD 70, about forty years later. Titus built a wall around the entire city, which is what verse 43 describes."
+    ]
+   },
+   {
+    "type": "note",
+    "text": "The misalignment you spotted. They were right to celebrate. They had the wrong kind of king in mind. They wanted a throne. He came for a cross. Zechariah 9:11 already joined that king to \"the blood of the covenant,\" and at the supper he said \"this is my blood of the new covenant.\" He did save them. He saved them by body and blood, not by driving Rome out of Zion."
+   },
+   {
+    "type": "heading",
+    "text": "The same week, in John's account"
+   },
+   {
+    "type": "list",
+    "items": [
+     "Mary pours a year's wages of perfume on his feet the night before. He says she kept it for his burial. She understood his death before anyone else. John 12:1-8",
+     "Judas objects, because he was stealing from the money bag. John 12:6",
+     "Greeks ask to see him, and he says \"the hour has come.\" Gentiles arriving is the signal. John 12:20-23"
+    ]
+   },
+   {
+    "type": "scripture",
+    "ref": "John 12:24",
+    "caption": "John 12:24",
+    "text": "Most certainly I tell you, unless a grain of wheat falls into the earth and dies, it remains by itself alone. But if it dies, it bears much fruit.",
+    "lead": false
+   },
+   {
+    "type": "scripture",
+    "ref": "John 12:27",
+    "caption": "John 12:27",
+    "text": "Now my soul is troubled. What shall I say? 'Father, save me from this time?' But I came to this time for this cause.",
+    "lead": false
+   },
+   {
+    "type": "paragraph",
+    "text": "He asks for escape, then refuses it in the same breath. Then he prays \"Father, glorify your name.\" The grief was real and the choice was firm. Both at once.",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "Why the crowd could not see it"
+   },
+   {
+    "type": "paragraph",
+    "text": "John stops the story and explains. He quotes Isaiah 53:1 and Isaiah 6:10. Then he says something enormous: Isaiah \"saw his glory and spoke of him\" (John 12:41). In Isaiah 6, Isaiah sees the Lord on a throne, high and lifted up. Isaiah 52:13 uses those same two words for the Servant who suffers. The throne and the cross belong to the same person. That is why Jesus said \"when I am lifted up from the earth, I will draw all people to myself.\"",
+    "dim": false
+   },
+   {
+    "type": "heading",
+    "text": "The method, so you can do this yourself"
+   },
+   {
+    "type": "steps",
+    "items": [
+     "Read the whole chapter before the verse.",
+     "In poetry, look for the pair. The second line usually repeats the first.",
+     "Check where the New Testament quotes the Old. A study Bible lists these in the margin.",
+     "Compare the four Gospels side by side. Each one keeps details the others drop.",
+     "Ask what the passage shows about God, and what it asks of you."
+    ]
+   }
+  ]
+ }
+]

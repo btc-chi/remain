@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Root Work — a walking guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1622;
+  --ink2:#101D2C;
+  --rule:#1D2E42;
+  --rule-soft:#162535;
+  --body:#B5C2D1;
+  --dim:#7A8998;
+  --head:#EDF2F7;
+  --lamp:#E9BE6C;
+  --lamp-dim:#8A6E3A;
+  --vine:#8AA77A;
+  --measure:64ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;background:var(--ink);color:var(--body);
+  font-family:'Archivo',system-ui,sans-serif;
+  font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:0 24px}
+@media(min-width:1000px){
+  .shell{display:grid;grid-template-columns:230px minmax(0,1fr);gap:64px;padding:0 40px}
+}
+
+/* ---------- nav ---------- */
+nav{padding:40px 0 24px;border-bottom:1px solid var(--rule-soft)}
+@media(min-width:1000px){
+  nav{position:sticky;top:0;height:100vh;overflow-y:auto;padding:56px 0 40px;border-bottom:none;border-right:1px solid var(--rule-soft)}
+  nav::-webkit-scrollbar{width:4px}
+  nav::-webkit-scrollbar-thumb{background:var(--rule)}
+}
+nav h2{font-size:.72rem;letter-spacing:.06em;font-weight:600;color:var(--dim);margin:0 0 14px}
+nav ol{list-style:none;margin:0;padding:0;counter-reset:n}
+nav li{counter-increment:n;margin:0 0 3px}
+nav a{
+  display:block;padding:4px 0 4px 26px;position:relative;
+  color:var(--body);text-decoration:none;font-size:.86rem;line-height:1.35;
+}
+nav a::before{
+  content:counter(n,decimal-leading-zero);position:absolute;left:0;top:4px;
+  font-size:.7rem;color:var(--lamp-dim);font-variant-numeric:tabular-nums;
+}
+nav a:hover,nav a:focus-visible{color:var(--lamp)}
+
+/* ---------- hero ---------- */
+header{padding:72px 0 56px;border-bottom:1px solid var(--rule-soft)}
+@media(min-width:1000px){header{padding:120px 0 72px}}
+.kicker{font-size:.78rem;color:var(--vine);margin:0 0 28px}
+header h1{
+  font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(2.6rem,7vw,4.6rem);
+  line-height:1.02;color:var(--head);margin:0 0 6px;letter-spacing:-.015em;
+}
+header .sub{
+  font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:300;
+  font-size:clamp(1.3rem,3.4vw,2rem);color:var(--dim);margin:0 0 44px;line-height:1.2;
+}
+header p{max-width:var(--measure);color:var(--body);margin:0 0 16px}
+
+/* ---------- sections ---------- */
+main{padding-bottom:120px}
+section{padding:64px 0;border-bottom:1px solid var(--rule-soft)}
+section:last-child{border-bottom:none}
+h2.sec{
+  font-family:'Newsreader',Georgia,serif;font-weight:400;
+  font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;color:var(--head);
+  margin:0 0 8px;letter-spacing:-.01em;
+}
+.sec-note{color:var(--dim);font-size:.9rem;margin:0 0 36px;max-width:var(--measure)}
+h3{font-size:1rem;font-weight:600;color:var(--head);margin:40px 0 10px;letter-spacing:.005em}
+h3:first-of-type{margin-top:0}
+h4{font-size:.82rem;font-weight:600;color:var(--vine);margin:28px 0 8px}
+p{max-width:var(--measure);margin:0 0 14px}
+.dim{color:var(--dim)}
+strong{color:var(--head);font-weight:600}
+em{font-style:italic}
+a.inline{color:var(--lamp);text-decoration:none;border-bottom:1px solid var(--lamp-dim)}
+
+ul,ol{max-width:var(--measure);padding-left:20px;margin:0 0 16px}
+li{margin:0 0 7px}
+ul.plain{list-style:none;padding:0}
+ul.plain li{padding-left:16px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--lamp-dim)}
+
+/* ---------- SCRIPTURE: the loudest thing on the page ---------- */
+.s{margin:26px 0 30px;max-width:60ch}
+.s .t{
+  font-family:'Newsreader',Georgia,serif;font-weight:300;
+  font-size:clamp(1.28rem,2.5vw,1.62rem);line-height:1.42;
+  color:var(--lamp);margin:0 0 9px;letter-spacing:-.005em;
+}
+.s .r{font-size:.76rem;color:var(--dim);letter-spacing:.04em;display:block}
+.s.tight .t{font-size:clamp(1.1rem,2vw,1.28rem)}
+
+/* a scripture that carries a whole section */
+.s.lead{border-left:2px solid var(--lamp-dim);padding-left:26px;margin:34px 0 38px}
+.s.lead .t{font-size:clamp(1.5rem,3.2vw,2.05rem);line-height:1.34}
+
+/* reference-only, no quoted text */
+.ref{display:block;font-size:.88rem;color:var(--body);margin:0 0 6px;max-width:var(--measure)}
+.ref b{color:var(--lamp);font-weight:500;font-variant-numeric:tabular-nums}
+
+/* ---------- structural bits ---------- */
+.rows{max-width:var(--measure);margin:0 0 20px}
+.row{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:11px 0;border-top:1px solid var(--rule-soft)}
+.row:last-child{border-bottom:1px solid var(--rule-soft)}
+.row dt{color:var(--lamp);font-size:.84rem;font-variant-numeric:tabular-nums}
+.row dd{margin:0;font-size:.93rem}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:2px}}
+
+.two{display:grid;gap:36px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:48px}.two p,.two ul{max-width:none}}
+
+.map{
+  font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.78rem;line-height:1.75;
+  color:var(--body);background:var(--ink2);border:1px solid var(--rule);
+  padding:22px 20px;overflow-x:auto;white-space:pre;margin:0 0 8px;
+}
+.map b{color:var(--lamp);font-weight:400}
+.map i{color:var(--vine);font-style:normal}
+
+.note{
+  border-left:2px solid var(--vine);padding:4px 0 4px 20px;margin:26px 0;
+  max-width:var(--measure);font-size:.92rem;color:var(--body);
+}
+.note b{color:var(--vine)}
+
+.steps{counter-reset:s;list-style:none;padding:0;max-width:var(--measure)}
+.steps li{counter-increment:s;padding-left:34px;position:relative;margin:0 0 12px}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:0;
+  font-size:.75rem;color:var(--lamp-dim);font-variant-numeric:tabular-nums;
+}
+
+footer{padding:56px 0 100px;color:var(--dim);font-size:.85rem}
+footer p{max-width:var(--measure)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<nav>
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#start">Start here</a></li>
+    <li><a href="#verses">Your verses, corrected</a></li>
+    <li><a href="#map">The mind map</a></li>
+    <li><a href="#who">Who he is</a></li>
+    <li><a href="#life">His time on earth</a></li>
+    <li><a href="#joy">His joys and his trials</a></li>
+    <li><a href="#why">Why he obeyed</a></li>
+    <li><a href="#twelve">The twelve</a></li>
+    <li><a href="#book">How the Bible came together</a></li>
+    <li><a href="#story">The whole story in ten steps</a></li>
+    <li><a href="#pray">How to pray</a></li>
+    <li><a href="#abide">Abide and bear fruit</a></li>
+    <li><a href="#spirit">The Holy Spirit</a></li>
+    <li><a href="#will">The will of God</a></li>
+    <li><a href="#bank">Verses for real moments</a></li>
+    <li><a href="#tell">Not scattered anymore</a></li>
+    <li><a href="#church">Stay with his people</a></li>
+    <li><a href="#plan">The reading plan</a></li>
+    <li><a href="#thread">The thread we studied</a></li>
+  </ol>
+</nav>
+
+<div>
+<header>
+  <p class="kicker">A walking guide, built from one conversation</p>
+  <h1>The Root Work</h1>
+  <p class="sub">Stay connected. The vine does the work.</p>
+
+  <div class="s lead" data-ref="John 15:5">
+    <p class="t">"I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing."</p>
+    <span class="r">John 15:5</span>
+  </div>
+
+  <p>You grew up Catholic. You did not pay attention in Sunday school. A few weeks ago that changed, and now it is personal. This guide holds everything from our study in one place, so you can read it, act on it, and build from it.</p>
+</header>
+
+<main>
+
+<section id="start">
+  <h2 class="sec">Start here</h2>
+  <p class="sec-note">Three things before anything else.</p>
+
+  <h3>One warning, because it protects the rest</h3>
+  <p>Jesus described people a few weeks into faith. Some seed lands on rock. Those people receive the word with joy. They believe for a while. Then a test comes, and they fall away. He gives the reason: they have no root.</p>
+  <div class="s tight" data-ref="Luke 8:13">
+    <p class="t">"Those on the rock are they who, when they hear, receive the word with joy; but these have no root, who believe for a while, then fall away in time of temptation."</p>
+    <span class="r">Luke 8:13</span>
+  </div>
+  <p>Your joy now is real. Joy alone does not hold you in a storm. Roots hold you. Roots are daily Scripture, prayer, a church, and obedience. Everything below is root work.</p>
+
+  <h3>Test what you are told</h3>
+  <div class="s tight" data-ref="Acts 17:11">
+    <p class="t">"...they received the word with all readiness of mind, examining the Scriptures daily to see whether these things were so."</p>
+    <span class="r">Acts 17:11</span>
+  </div>
+  <p>That includes this guide. Check every claim against the text.</p>
+
+  <h3>About the translation</h3>
+  <p class="dim">Scripture here is the World English Bible, which is public domain. You quote the NIV, so the wording will differ slightly in places. The meaning does not. Every passage carries its reference so you can pull the translation you prefer.</p>
+  <p class="dim">Each scripture block in this file also carries a <code>data-ref</code> attribute with its reference. If you build the app, you can parse this file and link every verse straight to your Bible API.</p>
+</section>
+
+<section id="verses">
+  <h2 class="sec">Your verses, corrected</h2>
+  <p class="sec-note">You said you botched them. You will lean on these, so they have to be exact.</p>
+
+  <h3>1. Romans 8:28 — not "always doing good work"</h3>
+  <div class="s" data-ref="Romans 8:28">
+    <p class="t">"We know that all things work together for good for those who love God, for those who are called according to his purpose."</p>
+    <span class="r">Romans 8:28</span>
+  </div>
+  <p>The verse does not say all things are good. It says God works inside all things, even bad ones, toward good. Read the next verse. It defines the good: you become like his Son.</p>
+
+  <h3>2. Galatians 5:22-23 — not Corinthians</h3>
+  <div class="s" data-ref="Galatians 5:22-23">
+    <p class="t">"But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control. Against such things there is no law."</p>
+    <span class="r">Galatians 5:22-23</span>
+  </div>
+  <p>That is nine. You missed joy, peace, patience, and kindness. Note that "fruit" is singular. It is one fruit with nine parts. You do not pick the parts you like. You probably mixed this with 1 Corinthians 13, the love chapter.</p>
+
+  <h3>3. John 15:5 — you merged two verses</h3>
+  <p>The vine verse is at the top of this guide. "Blessed is he who comes in the name of the Lord" is a different text. It is Psalm 118:26, the crowd's shout at the entry into Jerusalem. You joined the vine and the parade.</p>
+
+  <h3>4. Romans 12:1-2 — you nearly had it</h3>
+  <div class="s" data-ref="Romans 12:1-2">
+    <p class="t">"Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service. Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God."</p>
+    <span class="r">Romans 12:1-2</span>
+  </div>
+  <p>Add verse 1. The surrender comes first. The renewed mind comes after it. Note the word "living." A dead sacrifice stays on the altar. A living one can climb off. So this is a daily choice.</p>
+
+  <h3>5. The troubled heart — four moments, not one</h3>
+  <div class="s tight" data-ref="John 14:1">
+    <p class="t">"Don't let your heart be troubled. Believe in God. Believe also in me."</p>
+    <span class="r">John 14:1 — the Last Supper</span>
+  </div>
+  <div class="s tight" data-ref="John 14:27">
+    <p class="t">"Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don't let your heart be troubled, neither let it be fearful."</p>
+    <span class="r">John 14:27 — the Last Supper</span>
+  </div>
+  <div class="s tight" data-ref="John 16:33">
+    <p class="t">"In the world you have trouble; but cheer up! I have overcome the world."</p>
+    <span class="r">John 16:33 — end of his last teaching</span>
+  </div>
+  <div class="s tight" data-ref="John 20:19">
+    <p class="t">"Peace be to you."</p>
+    <span class="r">John 20:19 — after the resurrection</span>
+  </div>
+  <div class="note">
+    <p><b>The pattern.</b> In John 12:27 his soul is troubled. In 13:21 he is troubled again. In 14:1 he tells his friends not to be troubled. He takes the trouble and gives them the peace. In 20:19-20 he says "Peace be to you" and then shows them his hands and his side. The scars are the price of your peace.</p>
+  </div>
+
+  <h3>6. John 14:6 — you had this one exact</h3>
+  <div class="s" data-ref="John 14:6">
+    <p class="t">"I am the way, the truth, and the life. No one comes to the Father, except through me."</p>
+    <span class="r">John 14:6</span>
+  </div>
+  <p>Also from the Last Supper, the same night as "do not let your heart be troubled." It is his answer to Thomas, who asked how they could know the way.</p>
+
+  <h3>7 and 8. Psalm 139 — both of yours are in one chapter</h3>
+  <div class="s" data-ref="Psalm 139:8">
+    <p class="t">"If I ascend up into heaven, you are there. If I make my bed in Sheol, behold, you are there!"</p>
+    <span class="r">Psalm 139:8</span>
+  </div>
+  <div class="s" data-ref="Psalm 139:14">
+    <p class="t">"I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well."</p>
+    <span class="r">Psalm 139:14</span>
+  </div>
+  <p>Sheol means the grave. No place is outside his reach, not even death. Read the whole psalm. He knows you (1-6). He is everywhere (7-12). He made you (13-16). It closes with a prayer: search me, God, and know my heart (23-24).</p>
+
+  <h3>9. Psalm 118:22 — the cornerstone</h3>
+  <div class="s" data-ref="Psalm 118:22">
+    <p class="t">"The stone which the builders rejected has become the head of the corner."</p>
+    <span class="r">Psalm 118:22</span>
+  </div>
+  <p>This comes from the same psalm as the shout at the entry. Jesus quotes it in the Temple a few days later (Luke 20:17). Peter quotes it in Acts 4:11. The stones that could cry out, the stones that fall in AD 70, and the cornerstone all sit in the same week.</p>
+
+  <h3>10. Giving yourself to him</h3>
+  <div class="s" data-ref="Luke 9:23">
+    <p class="t">"If anyone desires to come after me, let him deny himself, take up his cross, and follow me."</p>
+    <span class="r">Luke 9:23</span>
+  </div>
+  <p>The phrase you reached for about glory is John 17:1-2. Jesus prays, "Father, the hour has come. Glorify your Son, that your Son may glorify you," and then speaks of giving eternal life to all whom the Father has given him.</p>
+  <div class="s" data-ref="John 17:20">
+    <p class="t">"Not for these only do I pray, but for those also who believe in me through their word."</p>
+    <span class="r">John 17:20</span>
+  </div>
+  <p>That is you. He prayed for you in that room, before the cross. You give yourself to him. The Father already gave you to him.</p>
+</section>
+
+<section id="map">
+  <h2 class="sec">The mind map</h2>
+  <p class="sec-note">Eleven branches. One root. Print this one.</p>
+
+  <div class="map">FOUNDATION  <b>Matthew 7:24-25</b>   hear his words and do them
+│
+THE VINE    <b>John 15:5</b>
+WHY         <b>Romans 5:8</b> · <b>Ephesians 2:8-10</b> · <b>2 Corinthians 5:17</b>
+│
+├─ <i>1  KNOW HIM — the Word</i>
+│     <b>2 Timothy 3:16-17</b>
+│     <b>Psalm 119:11</b> · <b>Psalm 119:105</b>
+│     <b>James 1:22</b>          read it, then do it
+│
+├─ <i>2  ABIDE — prayer</i>
+│     <b>Matthew 6:9-13</b>      the pattern
+│     <b>Mark 1:35</b>           his habit
+│     <b>Philippians 4:6-7</b>
+│
+├─ <i>3  BE TRANSFORMED — renewed mind</i>
+│     <b>Romans 12:1-2</b>
+│     <b>Philippians 4:8</b>
+│     <b>2 Corinthians 10:5</b>
+│
+├─ <i>4  WALK BY THE SPIRIT</i>
+│     <b>John 14:26</b>
+│     <b>Romans 8:14-16</b>
+│     <b>Galatians 5:16</b> · <b>Galatians 5:25</b>
+│
+├─ <i>5  DO THE FATHER'S WILL</i>
+│     <b>Matthew 22:37-39</b>
+│     <b>Micah 6:8</b>
+│     <b>1 Thessalonians 5:16-18</b>
+│
+├─ <i>6  BEAR FRUIT, SOW GOOD</i>
+│     <b>Galatians 5:22-23</b>
+│     <b>John 15:8</b>
+│     <b>Galatians 6:9-10</b>
+│
+├─ <i>7  HAVE PEACE</i>
+│     <b>John 14:27</b> · <b>John 16:33</b>
+│     <b>Isaiah 26:3</b>
+│     <b>Matthew 6:33-34</b>
+│
+├─ <i>8  STAND IN TRIALS</i>
+│     <b>James 1:2-4</b>
+│     <b>Romans 5:3-5</b>
+│     <b>2 Corinthians 12:9</b>
+│
+├─ <i>9  REMEMBER HIM IN GOOD TIMES</i>
+│     <b>Deuteronomy 8:10-18</b>
+│     <b>James 1:17</b>
+│     <b>Philippians 4:11-13</b>
+│
+├─ <i>10 STAY WITH HIS PEOPLE</i>
+│     <b>Acts 2:42</b>
+│     <b>Hebrews 10:24-25</b>
+│
+└─ <i>11 GO AND TELL</i>
+      <b>Mark 5:19</b>           start at home
+      <b>Matthew 28:19-20</b>
+      <b>1 Peter 3:15</b> · <b>Colossians 4:5-6</b></div>
+</section>
+
+<section id="who">
+  <h2 class="sec">Who he is</h2>
+  <p class="sec-note">You said he was a man, and that this makes him relatable. True, and half the truth.</p>
+
+  <div class="two">
+    <div>
+      <h4>The man</h4>
+      <div class="s tight" data-ref="Hebrews 4:15">
+        <p class="t">"For we don't have a high priest who can't be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin."</p>
+        <span class="r">Hebrews 4:15</span>
+      </div>
+      <p>He suffered when he was tempted, so he can help you when you are tempted (Hebrews 2:18).</p>
+    </div>
+    <div>
+      <h4>The God</h4>
+      <div class="s tight" data-ref="John 1:1,14">
+        <p class="t">"In the beginning was the Word, and the Word was with God, and the Word was God... The Word became flesh, and lived among us."</p>
+        <span class="r">John 1:1, 14</span>
+      </div>
+      <p>He was in the form of God. He took the form of a servant and obeyed to the point of a cross (Philippians 2:6-8).</p>
+    </div>
+  </div>
+
+  <p>Both matter. A man alone cannot save you. A God who never became a man cannot fully understand you. He is both. Hebrews 4:16 gives you the result: come to his throne with confidence.</p>
+  <p class="dim">The church stated this at the Council of Chalcedon, AD 451: fully God and fully man, in one person.</p>
+</section>
+
+<section id="life">
+  <h2 class="sec">His time on earth</h2>
+  <p class="sec-note">About 33 years. Roughly three of them public.</p>
+
+  <dl class="rows">
+    <div class="row"><dt>c. 6-4 BC</dt><dd><strong>Born</strong> in Bethlehem. Herod died about 4 BC, which is why the date is earlier than you would expect.</dd></div>
+    <div class="row"><dt>The silent years</dt><dd><strong>Nazareth.</strong> One story survives: age twelve, in the Temple (Luke 2:41-52). He worked as a craftsman (Mark 6:3).</dd></div>
+    <div class="row"><dt>c. AD 27-29</dt><dd><strong>Baptism.</strong> He was about thirty (Luke 3:23). The Father says "You are my beloved Son" before Jesus performs one miracle.</dd></div>
+    <div class="row"><dt>Immediately after</dt><dd><strong>Forty days in the wilderness</strong> and three temptations (Luke 4:1-13).</dd></div>
+    <div class="row"><dt>About three years</dt><dd><strong>Ministry.</strong> John names three Passovers (2:13, 6:4, 11:55).</dd></div>
+    <div class="row"><dt>Luke 9:51</dt><dd><strong>The turn.</strong> He set his face to go to Jerusalem. He knew what was waiting.</dd></div>
+    <div class="row"><dt>The last week</dt><dd><strong>The entry, the Temple, the supper, Gethsemane, the trials, the cross.</strong></dd></div>
+    <div class="row"><dt>c. AD 30 or 33</dt><dd><strong>Crucified and raised</strong> on the third day.</dd></div>
+    <div class="row"><dt>Forty days</dt><dd><strong>Appearances</strong> (Acts 1:3), then the ascension from the Mount of Olives.</dd></div>
+    <div class="row"><dt>Ten days later</dt><dd><strong>Pentecost.</strong> The Spirit comes. Three thousand believe in one day (Acts 2:41).</dd></div>
+  </dl>
+
+  <div class="note">
+    <p><b>Watch the bookends.</b> His first recorded words, age twelve: "Didn't you know that I must be in my Father's house?" (Luke 2:49). His last words on the cross: "Father, into your hands I commit my spirit" (Luke 23:46). His whole life sits between those two sentences.</p>
+  </div>
+</section>
+
+<section id="joy">
+  <h2 class="sec">His joys and his trials</h2>
+  <p class="sec-note">He was not a gloomy man. He was also a man of sorrows. Both are in the text.</p>
+
+  <div class="two">
+    <div>
+      <h4>The good times</h4>
+      <ul class="plain">
+        <li>His first sign kept a wedding party going. <span class="dim">John 2:1-11</span></li>
+        <li>He ate with sinners so often that enemies called him a glutton and a drunkard. The charge was false. The meals were real. <span class="dim">Luke 7:34</span></li>
+        <li>He rejoiced greatly in the Holy Spirit. <span class="dim">Luke 10:21</span></li>
+        <li>He took children in his arms and blessed them. <span class="dim">Mark 10:16</span></li>
+        <li>His stories end in parties. The shepherd, the woman, and the father all say "rejoice with me." <span class="dim">Luke 15</span></li>
+      </ul>
+      <div class="s tight" data-ref="John 15:11">
+        <p class="t">"I have spoken these things to you, that my joy may remain in you, and that your joy may be made full."</p>
+        <span class="r">John 15:11</span>
+      </div>
+    </div>
+    <div>
+      <h4>The trials</h4>
+      <ul class="plain">
+        <li>Hungry after forty days. <span class="dim">Matthew 4:2</span></li>
+        <li>Tired enough to sit down at a well. Asleep in a boat during a storm. <span class="dim">John 4:6 · Mark 4:38</span></li>
+        <li>No home. "The Son of Man has nowhere to lay his head." <span class="dim">Matthew 8:20</span></li>
+        <li>His hometown tried to throw him off a cliff. <span class="dim">Luke 4:29</span></li>
+        <li>His family said he was out of his mind. His brothers did not believe him. <span class="dim">Mark 3:21 · John 7:5</span></li>
+        <li>Many followers left him. <span class="dim">John 6:66</span></li>
+        <li>He wept at his friend's grave. <span class="dim">John 11:35</span></li>
+        <li>In Gethsemane his sweat fell like drops of blood. <span class="dim">Luke 22:44</span></li>
+        <li>A friend betrayed him. His closest friend denied him. All of them ran.</li>
+        <li>On the cross: "My God, my God, why have you forsaken me?" That is the first line of Psalm 22. <span class="dim">Mark 15:34</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><b>For your family.</b> His brother James did not believe in him. After the resurrection, Jesus appeared to James (1 Corinthians 15:7). James became a leader of the Jerusalem church and wrote the book that carries his name. A doubting brother became a pillar. Keep praying for yours.</p>
+  </div>
+</section>
+
+<section id="why">
+  <h2 class="sec">Why he obeyed when it was hard</h2>
+  <p class="sec-note">You asked this directly. The text gives five answers.</p>
+
+  <ol class="steps">
+    <li><strong>Love.</strong> "The world must know that I love the Father" (John 14:31). Obedience was how he showed it. He asks the same of you: "If you love me, keep my commandments" (John 14:15).</li>
+    <li><strong>It fed him.</strong> "My food is to do the will of him who sent me" (John 4:34). Obedience gave him strength. It did not only cost him strength.</li>
+    <li><strong>Trust.</strong> He did only what he saw the Father doing (John 5:19). He never walked alone.</li>
+    <li><strong>The joy ahead.</strong> He looked past the pain to the result. You are part of that result.</li>
+    <li><strong>Honest prayer.</strong> Hebrews 5:7 says he prayed with loud cries and tears. It did not come easily. He wrestled, then said "not my will, but yours."</li>
+  </ol>
+
+  <div class="s" data-ref="Hebrews 12:2">
+    <p class="t">"...who for the joy that was set before him endured the cross, despising its shame, and has sat down at the right hand of the throne of God."</p>
+    <span class="r">Hebrews 12:2</span>
+  </div>
+
+  <p>Then Hebrews 5:8 adds the line you should sit with: he learned obedience from what he suffered. Jesus learned obedience through hardship. You will too.</p>
+</section>
+
+<section id="twelve">
+  <h2 class="sec">The twelve</h2>
+  <p class="sec-note">Ordinary men. Broken in public. Used anyway.</p>
+
+  <p>Peter, Andrew, James, John, Philip, Bartholomew, Thomas, Matthew, James son of Alphaeus, Thaddaeus, Simon the Zealot, Judas Iscariot. Luke names "Judas son of James" where Mark has Thaddaeus. Most scholars say they are the same man.</p>
+
+  <h3>Their troubles</h3>
+  <ul class="plain">
+    <li><strong>Matthew</strong> collected taxes for Rome. <strong>Simon</strong> was a Zealot, a rebel against Rome. Jesus put both men on one team.</li>
+    <li><strong>James and John</strong> wanted to call fire down on a village (Luke 9:54). He nicknamed them Sons of Thunder. They also asked for the best seats.</li>
+    <li>They argued about who was greatest, even at the Last Supper (Luke 22:24).</li>
+    <li><strong>Thomas</strong> refused to believe without proof. Eight days later he said "My Lord and my God!" (John 20:28). That is one of the clearest statements in the New Testament that Jesus is God.</li>
+    <li><strong>Peter</strong> walked on water, then sank. He confessed Jesus as Messiah, and a few verses later Jesus called him Satan. He swore he would die with Jesus, then denied him three times.</li>
+    <li>All of them fled (Mark 14:50). That is Zechariah 13:7 coming true. The shepherd was struck and the sheep scattered.</li>
+  </ul>
+
+  <h3>Then the turn</h3>
+  <p>In John 21:15-19 Jesus asks Peter three times, "Do you love me?" Three denials, three restorations, then "Follow me." About fifty days after the denial, Peter preached in Jerusalem and three thousand believed.</p>
+  <div class="s" data-ref="Acts 4:13">
+    <p class="t">"Now when they saw the boldness of Peter and John, and had perceived that they were unlearned and ignorant men, they marveled. They recognized that they had been with Jesus."</p>
+    <span class="r">Acts 4:13</span>
+  </div>
+  <p>That answers your worry about Sunday school. Peter had no religious training at all. Time with Jesus was the difference. That is what you are doing now.</p>
+
+  <h3>Paul</h3>
+  <p>He persecuted the church, then met Jesus on the road (Acts 9). In 2 Corinthians 11:24-27 he lists his trials: five whippings of thirty-nine lashes, three beatings with rods, one stoning, three shipwrecks. He wrote "Rejoice in the Lord always" from prison. In 1 Timothy 1:15 he calls himself the worst of sinners.</p>
+  <div class="s" data-ref="Romans 5:8">
+    <p class="t">"But God commends his own love toward us, in that while we were yet sinners, Christ died for us."</p>
+    <span class="r">Romans 5:8</span>
+  </div>
+  <p>You said you are a sinner and he still wanted you. That is the verse for it.</p>
+</section>
+
+<section id="book">
+  <h2 class="sec">How the Bible came together</h2>
+  <p class="sec-note">It is a library, not one book.</p>
+
+  <h3>Why your Catholic Bible has more books</h3>
+  <p>Protestant Bibles have 66 books: 39 Old Testament, 27 New. Catholic Bibles have 73. The extra seven are Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach, and Baruch, plus additions to Esther and Daniel. Catholics call them deuterocanonical. Protestants call them the Apocrypha. The Jewish Bible does not include them. The Council of Trent fixed the Catholic list in 1546.</p>
+  <p class="dim">You do not need to settle this now. Every book in this guide is on both lists.</p>
+
+  <h3>The Old Testament</h3>
+  <p>Israel collected it over centuries. The Hebrew Bible has three parts: the Law, the Prophets, and the Writings. Jesus names that shape himself in Luke 24:44. In 1947 shepherds found the Dead Sea Scrolls, including a complete Isaiah scroll from about 125 BC. It is a thousand years older than the oldest copy known before it, and it matches closely.</p>
+
+  <h3>The New Testament</h3>
+  <ul class="plain">
+    <li>Paul's letters came first, roughly AD 48-65.</li>
+    <li>1 Corinthians 15:3-7 preserves a creed about the death, burial, resurrection, and appearances. Most scholars, including skeptics, date it to within a few years of the cross.</li>
+    <li>Mark was likely first, about AD 60-70. Matthew and Luke followed. John came last, about AD 90.</li>
+    <li>Luke states his method: he investigated carefully from eyewitnesses and wrote an orderly account (Luke 1:1-4).</li>
+    <li>The church did not invent the list. It recognized books already in use. The tests were apostolic link, agreement with the faith, and use across the churches.</li>
+    <li>Athanasius listed our exact 27 books in AD 367. Councils at Hippo (393) and Carthage (397) confirmed it.</li>
+    <li>More than 5,800 Greek manuscripts survive. No other ancient book comes close.</li>
+  </ul>
+
+  <h3>The shelf</h3>
+  <dl class="rows">
+    <div class="row"><dt>Law · 5</dt><dd>Genesis, Exodus, Leviticus, Numbers, Deuteronomy</dd></div>
+    <div class="row"><dt>History · 12</dt><dd>Joshua, Judges, Ruth, 1-2 Samuel, 1-2 Kings, 1-2 Chronicles, Ezra, Nehemiah, Esther</dd></div>
+    <div class="row"><dt>Wisdom · 5</dt><dd>Job, Psalms, Proverbs, Ecclesiastes, Song of Songs</dd></div>
+    <div class="row"><dt>Major Prophets · 5</dt><dd>Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel</dd></div>
+    <div class="row"><dt>Minor Prophets · 12</dt><dd>Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi. Minor means shorter, not lesser.</dd></div>
+    <div class="row"><dt>Gospels · 4</dt><dd>Matthew, Mark, Luke, John</dd></div>
+    <div class="row"><dt>History · 1</dt><dd>Acts</dd></div>
+    <div class="row"><dt>Paul · 13</dt><dd>Romans, 1-2 Corinthians, Galatians, Ephesians, Philippians, Colossians, 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon</dd></div>
+    <div class="row"><dt>Other letters · 8</dt><dd>Hebrews, James, 1-2 Peter, 1-2-3 John, Jude</dd></div>
+    <div class="row"><dt>Prophecy · 1</dt><dd>Revelation</dd></div>
+  </dl>
+</section>
+
+<section id="story">
+  <h2 class="sec">The whole story in ten steps</h2>
+  <p class="sec-note">Every book sits somewhere on this line.</p>
+
+  <ol class="steps">
+    <li><strong>Creation.</strong> God makes a good world. <span class="dim">Genesis 1-2</span></li>
+    <li><strong>The fall.</strong> Humans rebel and death enters. Genesis 3:15 holds the first promise of a rescuer.</li>
+    <li><strong>The promise.</strong> God chooses Abraham to bless all nations. <span class="dim">Genesis 12:1-3</span></li>
+    <li><strong>The rescue.</strong> God frees Israel from Egypt and gives the Law. The Passover lamb appears here. <span class="dim">Exodus</span></li>
+    <li><strong>The kingdom.</strong> God promises David a throne that lasts forever. <span class="dim">2 Samuel 7:12-16</span></li>
+    <li><strong>The exile.</strong> Israel breaks the covenant. Babylon destroys Jerusalem in 586 BC. The prophets promise a new covenant. <span class="dim">Jeremiah 31:31-34</span></li>
+    <li><strong>The silence.</strong> About four hundred years between Malachi and John the Baptist.</li>
+    <li><strong>The King.</strong> Jesus lives, dies, and rises. <span class="dim">the Gospels</span></li>
+    <li><strong>The church.</strong> The Spirit comes and the news spreads. <span class="dim">Acts and the letters</span></li>
+    <li><strong>The new creation.</strong> God lives with his people. <span class="dim">Revelation 21:3-4</span></li>
+  </ol>
+
+  <div class="s" data-ref="Revelation 21:4">
+    <p class="t">"He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain any more."</p>
+    <span class="r">Revelation 21:4</span>
+  </div>
+  <p>The man who wept over Jerusalem is the one who wipes away every tear.</p>
+</section>
+
+<section id="pray">
+  <h2 class="sec">How to pray</h2>
+  <p class="sec-note">The disciples asked your exact question: "Lord, teach us to pray." Luke 11:1.</p>
+
+  <p>He answered with the Our Father. You know it by heart from your Catholic years. Now pray it slowly, one line at a time, and mean each line.</p>
+
+  <dl class="rows">
+    <div class="row"><dt>Our Father</dt><dd>You speak to your Father, not a stranger. The Spirit lets you call him Abba (Romans 8:15).</dd></div>
+    <div class="row"><dt>Hallowed be your name</dt><dd>Start with worship, not requests.</dd></div>
+    <div class="row"><dt>Your will be done</dt><dd>Put his plans above yours. This is Gethsemane in small form.</dd></div>
+    <div class="row"><dt>Daily bread</dt><dd>Ask for today's needs. "Daily" means you come back tomorrow.</dd></div>
+    <div class="row"><dt>Forgive us, as we forgive</dt><dd>Confess, and release grudges. He explains this in Matthew 6:14-15.</dd></div>
+    <div class="row"><dt>Deliver us</dt><dd>Ask for protection.</dd></div>
+  </dl>
+
+  <h3>His own habits</h3>
+  <ul class="plain">
+    <li>Early, and alone. <span class="dim">Mark 1:35</span></li>
+    <li>Often, away from the crowds. <span class="dim">Luke 5:16</span></li>
+    <li>All night before a big decision. <span class="dim">Luke 6:12</span></li>
+    <li>In secret, without empty repetition. <span class="dim">Matthew 6:6-7</span></li>
+    <li>Honest, even raw. <span class="dim">Mark 14:36</span></li>
+  </ul>
+
+  <p>The Psalms show you can pray angry, sad, or afraid. When you have no words, Romans 8:26 says the Spirit prays for you. Luke 18:1 says to always pray and not give up.</p>
+
+  <div class="s" data-ref="Philippians 4:6-7">
+    <p class="t">"In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus."</p>
+    <span class="r">Philippians 4:6-7</span>
+  </div>
+</section>
+
+<section id="abide">
+  <h2 class="sec">Abide and bear fruit</h2>
+  <p class="sec-note">John 15:1-17 is your core chapter. Read it every week.</p>
+
+  <p>The word translated "remain" or "abide" is <em>menō</em>. It means stay, live, make your home there. It is not a visit. It is an address.</p>
+
+  <h3>How you remain</h3>
+  <ul class="plain">
+    <li>His words remain in you. <span class="dim">15:7</span></li>
+    <li>You keep his commands. <span class="dim">15:10</span></li>
+    <li>You love one another. <span class="dim">15:12</span></li>
+  </ul>
+
+  <h3>The verse for your hard seasons</h3>
+  <div class="s" data-ref="John 15:2">
+    <p class="t">"Every branch in me that doesn't bear fruit, he takes away. Every branch that bears fruit, he prunes, that it may bear more fruit."</p>
+    <span class="r">John 15:2</span>
+  </div>
+  <p>Pruning hurts. It is not punishment. It is care for a branch that is already bearing. Keep this verse close when things get cut back.</p>
+
+  <h3>The verses for your doubts about being chosen</h3>
+  <div class="s tight" data-ref="John 15:13">
+    <p class="t">"Greater love has no one than this, that someone lay down his life for his friends."</p>
+    <span class="r">John 15:13</span>
+  </div>
+  <div class="s tight" data-ref="John 15:15">
+    <p class="t">"No longer do I call you servants... but I have called you friends."</p>
+    <span class="r">John 15:15</span>
+  </div>
+  <div class="s tight" data-ref="John 15:16">
+    <p class="t">"You didn't choose me, but I chose you and appointed you, that you should go and bear fruit, and that your fruit should remain."</p>
+    <span class="r">John 15:16</span>
+  </div>
+
+  <div class="note">
+    <p><b>How fruit actually works.</b> A branch does not strain to produce grapes. It stays connected, and the vine does the work. Philippians 2:13 says God works in you both to will and to act. Your job is the connection.</p>
+  </div>
+</section>
+
+<section id="spirit">
+  <h2 class="sec">The Holy Spirit</h2>
+  <p class="sec-note">A correction first, because it will save you a lot of confusion.</p>
+
+  <p>You said you want to feel the Holy Spirit. Scripture does not measure him by feelings. It measures him by fruit and direction. Feelings rise and fall. Fruit lasts.</p>
+
+  <div class="s" data-ref="John 3:8">
+    <p class="t">"The wind blows where it wants to, and you hear its sound, but don't know where it comes from and where it is going. So is everyone who is born of the Spirit."</p>
+    <span class="r">John 3:8</span>
+  </div>
+  <p>He said that to Nicodemus, the man he told "you must be born again." Nicodemus was also a secret believer, afraid of what people would say. At the burial he came out in the open with seventy-five pounds of spices (John 19:39). You are somewhere in his story.</p>
+
+  <h3>What the Spirit actually does</h3>
+  <ul class="plain">
+    <li>Teaches you and reminds you of Jesus's words. <span class="dim">John 14:26</span></li>
+    <li>Shows you your sin. <span class="dim">John 16:8</span></li>
+    <li>Guides you into truth. <span class="dim">John 16:13</span></li>
+    <li>Confirms inside you that you are God's child. <span class="dim">Romans 8:16</span></li>
+    <li>Helps you pray when you have no words. <span class="dim">Romans 8:26</span></li>
+    <li>Grows the fruit. <span class="dim">Galatians 5:22</span></li>
+    <li>Can be grieved by your sin. <span class="dim">Ephesians 4:30</span></li>
+  </ul>
+
+  <div class="s" data-ref="Romans 8:16">
+    <p class="t">"The Spirit himself testifies with our spirit that we are children of God."</p>
+    <span class="r">Romans 8:16</span>
+  </div>
+  <p>That is the inner certainty you described. In practice, keeping in step with the Spirit (Galatians 5:25) means this: obey the small prompt now, confess sin quickly, and stay in the Word he inspired.</p>
+
+  <div class="note">
+    <p><b>On "since I was a boy."</b> Jesus said no one comes to him unless the Father draws him (John 6:44). What you felt as a boy may have been that drawing. Catholic teaching ties the Spirit to baptism. Many evangelicals tie his indwelling to conversion (Ephesians 1:13). The traditions disagree. Both agree God pursued you long before you answered.</p>
+  </div>
+</section>
+
+<section id="will">
+  <h2 class="sec">The will of God</h2>
+  <p class="sec-note">Romans 12:2 gives you the method. These verses give you the content.</p>
+
+  <dl class="rows">
+    <div class="row"><dt>John 6:40</dt><dd>That everyone who sees the Son and believes in him has eternal life.</dd></div>
+    <div class="row"><dt>1 Thess 4:3</dt><dd>Your sanctification, including sexual purity. Stated as God's will in plain words.</dd></div>
+    <div class="row"><dt>1 Thess 5:16-18</dt><dd>Always rejoice. Pray without ceasing. Give thanks in everything. "This is the will of God in Christ Jesus toward you."</dd></div>
+    <div class="row"><dt>1 Peter 2:15</dt><dd>Do good, and silence foolish talk against believers.</dd></div>
+    <div class="row"><dt>Micah 6:8</dt><dd>Act justly, love mercy, walk humbly with your God.</dd></div>
+    <div class="row"><dt>Matthew 22:37-39</dt><dd>Love God with everything. Love your neighbor as yourself. The whole Law hangs on these two.</dd></div>
+  </dl>
+
+  <p><strong>The rule:</strong> do the clear will you already know today. John 7:17 says anyone who chooses to do his will finds out whether the teaching is true. Obedience comes before more understanding.</p>
+</section>
+
+<section id="bank">
+  <h2 class="sec">Verses for real moments</h2>
+  <p class="sec-note">This is the section you will use most. Build it into the app first.</p>
+
+  <dl class="rows">
+    <div class="row"><dt>Worried</dt><dd>Matthew 6:34 · Philippians 4:6-7 · 1 Peter 5:7</dd></div>
+    <div class="row"><dt>Afraid</dt><dd>Isaiah 41:10 · Psalm 23:4 · Joshua 1:9</dd></div>
+    <div class="row"><dt>Tempted</dt><dd>1 Corinthians 10:13 · Matthew 4:1-11</dd></div>
+    <div class="row"><dt>Guilty after a fall</dt><dd>1 John 1:9 · Romans 8:1</dd></div>
+    <div class="row"><dt>Doubting</dt><dd>Mark 9:24</dd></div>
+    <div class="row"><dt>Weak or tired</dt><dd>2 Corinthians 12:9 · Isaiah 40:31 · Matthew 11:28-30</dd></div>
+    <div class="row"><dt>Angry</dt><dd>James 1:19-20 · Ephesians 4:26</dd></div>
+    <div class="row"><dt>Suffering</dt><dd>Romans 5:3-5 · James 1:2-4 · 1 Peter 4:12-13</dd></div>
+    <div class="row"><dt>Comfortable</dt><dd>Deuteronomy 8:10-18 · James 1:17</dd></div>
+    <div class="row"><dt>Tired of doing good</dt><dd>Galatians 6:9</dd></div>
+    <div class="row"><dt>Asked "how do you know?"</dt><dd>John 9:25 · 1 John 5:13</dd></div>
+    <div class="row"><dt>Your household</dt><dd>Joshua 24:15</dd></div>
+    <div class="row"><dt>Feeling far from done</dt><dd>Philippians 1:6</dd></div>
+  </dl>
+
+  <div class="s tight" data-ref="Mark 9:24">
+    <p class="t">"I believe. Help my unbelief!"</p>
+    <span class="r">Mark 9:24</span>
+  </div>
+  <div class="s tight" data-ref="2 Corinthians 12:9">
+    <p class="t">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
+    <span class="r">2 Corinthians 12:9</span>
+  </div>
+  <div class="s tight" data-ref="Galatians 6:9">
+    <p class="t">"Let's not be weary in doing good, for we will reap in due season, if we don't give up."</p>
+    <span class="r">Galatians 6:9</span>
+  </div>
+  <div class="s tight" data-ref="Philippians 1:6">
+    <p class="t">"...being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ."</p>
+    <span class="r">Philippians 1:6</span>
+  </div>
+
+  <h3>How he fought temptation</h3>
+  <p>In Matthew 4, Satan tempts him three times. Jesus answers each time by quoting Deuteronomy. He fought with Scripture he already knew by heart. Your habit of repeating verses is the right weapon.</p>
+  <div class="s" data-ref="Psalm 119:11">
+    <p class="t">"I have hidden your word in my heart, that I might not sin against you."</p>
+    <span class="r">Psalm 119:11</span>
+  </div>
+
+  <div class="note">
+    <p><b>One rule for this whole section.</b> Never take a verse out of its chapter. Philippians 4:13 is the classic case. People read "I can do all things" as a promise to win. In context it means Paul can be content whether he is hungry or full. Read the paragraph around every verse you memorize.</p>
+  </div>
+</section>
+
+<section id="tell">
+  <h2 class="sec">Not scattered anymore</h2>
+  <p class="sec-note">You picked the right word. In Zechariah 13:7 and Mark 14:50, the sheep scattered. After Pentecost the same men stood in public.</p>
+
+  <div class="s" data-ref="Mark 5:19">
+    <p class="t">"Go to your house, to your friends, and tell them what great things the Lord has done for you and how he had mercy on you."</p>
+    <span class="r">Mark 5:19</span>
+  </div>
+  <p>A man he healed wanted to leave with him. Jesus sent him home instead. Start where you are.</p>
+
+  <dl class="rows">
+    <div class="row"><dt>Life first</dt><dd>People see your good works and glorify your Father. <span class="dim">Matthew 5:16</span></dd></div>
+    <div class="row"><dt>Your story</dt><dd>"Though I was blind, now I see." The healed man could not answer every question. Nobody could argue him out of what happened to him. <span class="dim">John 9:25</span></dd></div>
+    <div class="row"><dt>Tone</dt><dd>Give your answer with humility and respect. <span class="dim">1 Peter 3:15</span></dd></div>
+    <div class="row"><dt>Online</dt><dd>Speech always with grace, seasoned with salt. Arguments rarely win people. Grace does. <span class="dim">Colossians 4:6</span></dd></div>
+    <div class="row"><dt>Expect resistance</dt><dd>His own brothers did not believe at first. The world will treat you as it treated him. <span class="dim">John 15:18-20</span></dd></div>
+  </dl>
+
+  <div class="s" data-ref="Joshua 24:15">
+    <p class="t">"...as for me and my house, we will serve Yahweh."</p>
+    <span class="r">Joshua 24:15</span>
+  </div>
+</section>
+
+<section id="church">
+  <h2 class="sec">Stay with his people</h2>
+  <p class="sec-note">A thread like ours can help you study. It cannot replace a church.</p>
+
+  <div class="s" data-ref="Acts 2:42">
+    <p class="t">"They continued steadfastly in the apostles' teaching and fellowship, in the breaking of bread, and prayer."</p>
+    <span class="r">Acts 2:42</span>
+  </div>
+  <p>Three of those four need other people. Hebrews 10:25 says do not give up meeting together.</p>
+  <ul class="plain">
+    <li>Find a church that teaches the Bible directly.</li>
+    <li>Find an older believer to walk with you. <span class="dim">Proverbs 27:17</span></li>
+    <li>Talk to a pastor about baptism and communion. Traditions differ on infant and believer's baptism, so your Catholic background makes that conversation worth having early.</li>
+  </ul>
+</section>
+
+<section id="plan">
+  <h2 class="sec">The reading plan</h2>
+  <p class="sec-note">One chapter a day. No rush.</p>
+
+  <h3>Phase 1 — his life, about three months</h3>
+  <dl class="rows">
+    <div class="row"><dt>Luke 1-24</dt><dd>Start at his birth. A doctor's careful account.</dd></div>
+    <div class="row"><dt>Acts 1-28</dt><dd>Luke's second volume. The disciples after the resurrection.</dd></div>
+    <div class="row"><dt>John 1-21</dt><dd>Who he is.</dd></div>
+    <div class="row"><dt>Mark 1-16</dt><dd>Fast and direct. Likely Peter's account.</dd></div>
+  </dl>
+
+  <h3>Phase 2 — how to live, about two months</h3>
+  <p>Romans. Galatians. Ephesians. Philippians. James. 1 John.</p>
+
+  <h3>Phase 3 — the foundation</h3>
+  <p>Genesis and Exodus. Then the whole Bible in a year.</p>
+
+  <h3>Alongside, every day</h3>
+  <p>One Psalm. One chapter of Proverbs. Proverbs has 31 chapters, so read the one matching today's date.</p>
+
+  <h3>The daily rhythm — twenty to thirty minutes</h3>
+  <ol class="steps">
+    <li><strong>Pray first.</strong> "Open my eyes, that I may see wondrous things out of your law." Psalm 119:18.</li>
+    <li><strong>Read one chapter.</strong></li>
+    <li><strong>Write down one verse</strong> that stands out.</li>
+    <li><strong>Write what it shows</strong> about God, and about you.</li>
+    <li><strong>Write one action</strong> for today. James 1:22: be doers of the word, not only hearers.</li>
+    <li><strong>Pray the verse back to him.</strong></li>
+  </ol>
+  <p>Memorize one verse a week. Start with your own, now corrected.</p>
+</section>
+
+<section id="thread">
+  <h2 class="sec">The thread we studied</h2>
+  <p class="sec-note">How one verse in Zechariah opened up a whole week of his life. Keep this as your example of how to read.</p>
+
+  <h3>The prophecy, about 500 years earlier</h3>
+  <div class="s" data-ref="Zechariah 9:9">
+    <p class="t">"Rejoice greatly, daughter of Zion! Shout, daughter of Jerusalem! Behold, your King comes to you! He is righteous, and having salvation; lowly, and riding on a donkey, even on a colt, the foal of a donkey."</p>
+    <span class="r">Zechariah 9:9</span>
+  </div>
+  <p>Hebrew poetry says each thing twice. Daughter of Zion and daughter of Jerusalem are one city. The donkey and the colt are one animal. Read the eight verses before it: God marches through the region like a conqueror. Then the king arrives on a donkey, not a war horse. Deuteronomy 17:16 told Israel's king not to collect horses. The horse was the animal of war.</p>
+
+  <h3>The day it happened</h3>
+  <p>He arranged it on purpose. He sent two disciples for a colt nobody had ridden (Luke 19:30). The crowd shouted "Hosanna," which means "save us, please" (Psalm 118:25). They wanted a king who would drive out Rome.</p>
+
+  <h3>Then he wept</h3>
+  <div class="s lead" data-ref="Luke 19:41-44">
+    <p class="t">"When he came near, he saw the city and wept over it, saying, 'If you, even you, had known today the things which belong to your peace! But now, they are hidden from your eyes. For the days will come on you, when your enemies will throw up a barricade against you, surround you, hem you in on every side, and will dash you and your children within you to the ground. They will not leave in you one stone on another, because you didn't know the time of your visitation.'"</p>
+    <span class="r">Luke 19:41-44</span>
+  </div>
+
+  <ul class="plain">
+    <li>The Greek word for "wept" here means loud wailing, not quiet tears. At Lazarus's grave a different, quieter word is used.</li>
+    <li>Three verses earlier he said that if the crowd went silent, the stones would cry out. Now he says no stone will be left on another. The same stones, twice.</li>
+    <li>"The time of your visitation" points back to Luke 1:68 and 1:78, where God visits his people. God came in person, and the city did not recognize him.</li>
+    <li>Rome destroyed Jerusalem in AD 70, about forty years later. Titus built a wall around the entire city, which is what verse 43 describes.</li>
+  </ul>
+
+  <div class="note">
+    <p><b>The misalignment you spotted.</b> They were right to celebrate. They had the wrong kind of king in mind. They wanted a throne. He came for a cross. Zechariah 9:11 already joined that king to "the blood of the covenant," and at the supper he said "this is my blood of the new covenant." He did save them. He saved them by body and blood, not by driving Rome out of Zion.</p>
+  </div>
+
+  <h3>The same week, in John's account</h3>
+  <ul class="plain">
+    <li>Mary pours a year's wages of perfume on his feet the night before. He says she kept it for his burial. She understood his death before anyone else. <span class="dim">John 12:1-8</span></li>
+    <li>Judas objects, because he was stealing from the money bag. <span class="dim">John 12:6</span></li>
+    <li>Greeks ask to see him, and he says "the hour has come." Gentiles arriving is the signal. <span class="dim">John 12:20-23</span></li>
+  </ul>
+
+  <div class="s" data-ref="John 12:24">
+    <p class="t">"Most certainly I tell you, unless a grain of wheat falls into the earth and dies, it remains by itself alone. But if it dies, it bears much fruit."</p>
+    <span class="r">John 12:24</span>
+  </div>
+
+  <div class="s" data-ref="John 12:27">
+    <p class="t">"Now my soul is troubled. What shall I say? 'Father, save me from this time?' But I came to this time for this cause."</p>
+    <span class="r">John 12:27</span>
+  </div>
+  <p>He asks for escape, then refuses it in the same breath. Then he prays "Father, glorify your name." The grief was real and the choice was firm. Both at once.</p>
+
+  <h3>Why the crowd could not see it</h3>
+  <p>John stops the story and explains. He quotes Isaiah 53:1 and Isaiah 6:10. Then he says something enormous: Isaiah "saw his glory and spoke of him" (John 12:41). In Isaiah 6, Isaiah sees the Lord on a throne, high and lifted up. Isaiah 52:13 uses those same two words for the Servant who suffers. The throne and the cross belong to the same person. That is why Jesus said "when I am lifted up from the earth, I will draw all people to myself."</p>
+
+  <h3>The method, so you can do this yourself</h3>
+  <ol class="steps">
+    <li>Read the whole chapter before the verse.</li>
+    <li>In poetry, look for the pair. The second line usually repeats the first.</li>
+    <li>Check where the New Testament quotes the Old. A study Bible lists these in the margin.</li>
+    <li>Compare the four Gospels side by side. Each one keeps details the others drop.</li>
+    <li>Ask what the passage shows about God, and what it asks of you.</li>
+  </ol>
+</section>
+
+<footer>
+  <p><strong>Scripture text:</strong> World English Bible, public domain. References are given so you can open any translation you prefer.</p>
+  <p><strong>For the app:</strong> every scripture block carries a <code>data-ref</code> attribute. Parse this file and you have your verse index and your links already built.</p>
+  <p style="margin-top:28px;color:var(--lamp);font-family:'Newsreader',Georgia,serif;font-size:1.05rem;font-style:italic;">"He who began a good work in you will complete it."</p>
+</footer>
+
+</main>
+</div>
+</div>
+</body>
+</html>

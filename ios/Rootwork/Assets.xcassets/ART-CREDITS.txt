@@ -1,0 +1,6 @@
+Placeholder art, all public domain (Wikimedia Commons):
+- verse.jpg: Frederic Edwin Church, Twilight in the Wilderness (1860)
+- father.jpg: Albert Bierstadt, Among the Sierra Nevada, California (1868)
+- son.jpg: Carl Bloch, The Sermon on the Mount (1877)
+- spirit.jpg: Andrei Rublev, The Trinity (c. 1411)
+Replace verse backgrounds with generated landscapes later.
